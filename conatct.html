@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact Us - Commercial Electronics</title>
     <link rel="stylesheet" href="contact.css" />
     <link
       rel="stylesheet"
@@ -15,15 +15,17 @@
   </head>
   <body>
     <header>
-      <a href="main.html">
-        <img style="float: left; margin-left: 20px" src="logo2.jpg" alt="logo"
-      /></a>
-      <h1>CONTACT US</h1>
+      <div class="header-content">
+        <a href="index.html">
+          <img class="header-logo" src="logo2.jpg" alt="logo">
+        </a>
+        <h1>CONTACT US</h1>
+      </div>
     </header>
     <nav>
       <ul>
-        <li><a href="main.html">Home</a></li>
-        <li>
+        <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
+        <li><i class="fa-solid fa-store"></i>
           <a class="has-submenu" href="product.html">Products</a>
           <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
@@ -33,47 +35,43 @@
             <li><a href="product.html#electronics">Electrical </a></li>
           </ul>
         </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="conatct.html">Contact</a></li>
+        <li><i class="fa-solid fa-address-card"></i><a href="about.html">About Us</a></li>
+        <li><i class="fa-sharp fa-solid fa-envelope"></i><a href="conatct.html">Contact</a></li>
         <li>
+          <i class="fa-solid fa-cart-shopping"></i>
           <a href="shopping.html">Shopping Cart </a>
         </li>
       </ul>
     </nav>
-    <main>
+    <index>
       <form action="">
         <fieldset>
-          <legend>Help Us Improve</legend>
-          <label for="">Nom </label>
-          <input type="text" required />
+          <legend style="background: transparent;">Help Us Improve</legend>
+          <label for="nom">Nom </label>
+          <input type="text" id="nom" required />
           <br />
-          <label for="">Prenom </label>
-          <input type="text" required />
+          <label for="prenom">Prenom </label>
+          <input type="text" id="prenom" required />
           <br />
-          <label for="">Telephone</label>
-          <input type="tel" required />
+          <label for="telephone">Telephone</label>
+          <input type="tel" id="telephone" required />
           <br />
-          <label for="">Email</label>
-          <input type="email" placeholder="exemple@gmail.com" /><br />
-          <label for="">sujet</label>
-          <input type="text" required />
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="exemple@gmail.com" /><br />
+          <label for="sujet">Sujet</label>
+          <input type="text" id="sujet" required />
           <br />
-          <label for="">Votre message</label>
+          <label for="message">Votre message</label>
           <br />
-          <textarea name="" id="" cols="30" rows="10"></textarea>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
           <br />
-          <input type="submit" placeholder="envoyer" />
+          <input type="submit" value="Envoyer" />
         </fieldset>
       </form>
-    </main>
+    </index>
     <footer>
       <div class="french-line">
-        <img
-          style="float: left; margin-left: 20px"
-          class="logo"
-          src="logo2.jpg"
-          alt="logo"
-        />
+        <img class="logo" src="logo2.jpg" alt="logo" />
         <p class="slogan">
           La première préférence pour les dernières nouveautés en électronique.
         </p>

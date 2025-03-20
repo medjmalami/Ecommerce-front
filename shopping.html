@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Commercial Electronics</title>
     <link rel="stylesheet" href="shopping.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -64,19 +65,21 @@ window.onload = function() {
         }
   }
 };
-
     </script>
-    
   </head>
   <body>
     <header>
-      <a href="main.html"> <img style="float: left; margin-left: 20px; ;" src="logo2.jpg" alt="logo"></a>
-      <h1>SHOPPING CART</h1>
+      <div class="header-content">
+        <a href="index.html">
+          <img class="header-logo" src="logo2.jpg" alt="logo">
+        </a>
+        <h1>SHOPPING CART</h1>
+      </div>
     </header>
     <nav>
       <ul>
-        <li><a href="main.html">Home</a></li>
-        <li ><a class="has-submenu" href="product.html">Products</a>
+        <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
+        <li><i class="fa-solid fa-store"></i><a class="has-submenu" href="product.html">Products</a>
         <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
@@ -85,14 +88,15 @@ window.onload = function() {
             <li><a href="product.html#electronics">Electrical </a></li>
           </ul>
         </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="conatct.html">Contact</a></li>
+        <li><i class="fa-solid fa-address-card"></i><a href="about.html">About Us</a></li>
+        <li><i class="fa-sharp fa-solid fa-envelope"></i><a href="conatct.html">Contact</a></li>
         <li>
+          <i class="fa-solid fa-cart-shopping"></i>
           <a href="shopping.html">Shopping Cart </a>
         </li>
       </ul>
     </nav>
-    <main>
+    <index>
           
         <section id="div1" class="product">
           <img
@@ -143,13 +147,13 @@ window.onload = function() {
               <ul>
                   <li>Écran : 1.9″ IPS Tactile 240 x 280 px</li>
                   <li>Bluetooth 5.1</li>
-                  <li>Protection d’écran : verre trempé</li>
+                  <li>Protection d'écran : verre trempé</li>
                   <li>Bracelet en silicone</li>
                   <li>charge magnétique</li>
                   <li>Capacité de la batterie : 230 mAh</li>
                   <li>Temps de charge : Environ 2 heures</li><li>110 modes sportifs</li>
               <li>Application Da Fit</li>
-              <li>Temps d’utilisation : jusqu’à 5 ~ 7 jours</li>
+              <li>Temps d'utilisation : jusqu'à 5 ~ 7 jours</li>
               <li>Couleur: Noir</li>
           <li> Garantie: 1 an</li></ul></p>
           <p class="old">269.000 DT</p>
@@ -186,7 +190,7 @@ window.onload = function() {
   
           <p><ul><li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
           <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
-          <li>Système d’exploitation: Android 11</li>
+          <li>Système d'exploitation: Android 11</li>
           <li>Mémoire RAM: 4Go</li>
           <li>Stockage: 64Go</li>
           <li> Batterie: 5000mAh</li>
@@ -206,9 +210,9 @@ window.onload = function() {
   
           <li>Écran Gaming COOLER MASTER GA241</li>
           <li>FLAT</li>
-          <li>Taille de l’écran: 23.8 Full HD, 100 Hz</li>
+          <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
           <li>Résolution: 1920 x 1080 pixel</li>
-          <li>Format d’écran: 16:9</li>
+          <li>Format d'écran: 16:9</li>
           <li>Luminosité: 250 cd/m²</li>
           <li>Temps de réponse: 1 ms (MPRT)</li>
           <li>Couleur: Noir</li>
@@ -226,7 +230,7 @@ window.onload = function() {
           
           <li>Écran:15.6″ FULL HD ips</li>
       <li>Processeur:I5-12450H</li>
-      <li>Système d’exploitation: Windows 11 Famille</li>
+      <li>Système d'exploitation: Windows 11 Famille</li>
       <li>Mémoire RAM:8Go DDR5-4800</li>
       <li>Disque Dur:512Go SSD</li>
       <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
@@ -435,7 +439,7 @@ window.onload = function() {
           <p>
               <ul>
               <li>Clavier Gaming Xtrike Me KB-280</li>
-              <li>Type d’interface USB </li>
+              <li>Type d'interface USB </li>
               <li>Connectivité filaire USB </li>
           </ul></p>
           <p class="new">20.000 DT</p>
@@ -596,7 +600,7 @@ window.onload = function() {
           <p class="new">59.00 DT</p>
           <button onclick="removed('div28')">Remove</button>
         </section>
-      </main>
+      </index>
       <div id="sum">"The Totale : <span id="price"></span>  DT</div>
       <h3 id="p">Your Shopping Cart is empty </h3>
       
@@ -659,9 +663,8 @@ window.onload = function() {
         }
       </script>
     <footer>
-      
-        
-      <div class="french-line"> <img style="float: left; margin-left: 20px" class="logo" src="logo2.jpg" alt="logo" />
+      <div class="french-line">
+        <img class="logo" src="logo2.jpg" alt="logo" />
         <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
       </div> 
        
@@ -678,7 +681,7 @@ window.onload = function() {
           <h3>Contact us</h3>
           <ul>
             <li>Phone: (+216)23344750</li>
-            <li>Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a> </li>
+            <li>Email: <a href="/cdn-cgi/l/email-protection#52383f333e3f3d3a333f3736333f3b3c376312353f333b3e7c313d3f"><span class="__cf_email__" data-cfemail="b2d8dfd3dedfdddad3dfd7d6d3dfdbdcd783f2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a> </li>
             <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
             <li>Opening Hours: 8:00AM</li>
             <li>Closing Hours: 18:00PM</li>
@@ -689,5 +692,5 @@ window.onload = function() {
     <hr style="color: aliceblue;"/>
     <p class="copyright">&copy; 2024 Commercial Electronics Store</p></div>
   </footer>
-  </body>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>

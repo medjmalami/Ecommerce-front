@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial Electronics Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img  style="float: left; margin-left: 20px; border-radius: 50px 20px;" src="logo2.jpg" alt="logo">
+      </a>
+    </header>
+    
+    <nav>
+      <ul>
+        <li>
+          <i class="fa-solid fa-house"></i>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-store"></i>
+          <a class="has-submenu" href="product.html">Products</a>
+          <ul class="submenu">
+            <li><a href="product.html#phone">Phones</a></li>
+            <li><a href="product.html#pc">Computers</a></li>
+            <li><a href="product.html#Gaming">Gaming</a></li>
+            <li><a href="product.html#Watch">Watch</a></li>
+            <li><a href="product.html#electronics">Electrical</a></li>
+          </ul>
+        </li>
+        <li>
+          <i class="fa-solid fa-address-card"></i>
+          <a href="about.html">About Us</a>
+        </li>
+        <li>
+          <i class="fa-sharp fa-solid fa-envelope"></i>
+          <a href="conatct.html">Contact</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <a href="shopping.html">Cart <sup id="notif">*</sup></a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div id="cart-indicator"></div>
+    
+    <div id="image-container">
+      <img src="img1.jpg" alt="Image 1">
+      <img src="img3.jpg!w700wp" alt="Image 2">
+      <img src="img2.jpg" alt="Image 3">
+      <img src="img4.jpg!w700wp" alt="Image 4">
+    </div>
+
+    <div class="title"><span class="blue">Mega</span> Promo</div>
+    
+    <index>
+      <section class="product">
+        <img src="chaise noire 3fc66dab.jpg_640x640Q90.jpg_.webp" alt="Product 1" />
+        <h2>Chaise Gaming Noir / Blanc -4400015083-BK-WH</h2>
+        <ul>
+          <li>Chaise pilote Gaming avec dossier haut</li>
+          <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
+          <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
+          <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
+          <li>Couleur : Noir et Blanc</li>
+        </ul>
+        <p class="old">850.000 DT</p>
+        <p class="new">599.000 DT</p>
+        <button onclick="showDivOnPage2('div1')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Mixeur-Plongeant-3en1-Tristar-MX-4154-Blanc-bestbuytunisie.prixtunisie.best_-168x168.jpg" alt="Product 2" />
+        <h2>Mixeur Plongeant 3en1 Tristar MX-4154 Blanc</h2>
+        <ul>
+          <li>Référence: MX-4154</li>
+          <li>Mixeur Tristar 3en1 avec pied en inox</li>
+          <li>Puissance: 200 Watts</li>
+          <li>Capacité bol: 500 ml</li>
+          <li>Utilisation confortable grâce à la forme ergonomique</li>
+          <li>Deux réglages de vitesses pour un mélange grossier et fin</li>
+          <li>Couleur: Blanc</li>
+          <li>Garantie: 1 an</li>
+        </ul>
+        <p class="old">129.000 DT</p>
+        <p class="new">105.000 DT</p>
+        <button onclick="showDivOnPage2('div2')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Montre-Connecte-Colmi-C61-Noir-3.webp" alt="Product 3" />
+        <h2>Montre Connecté Colmi C61 – Noir</h2>
+        <ul>
+          <li>Écran : 1.9″ IPS Tactile 240 x 280 px</li>
+          <li>Bluetooth 5.1</li>
+          <li>Protection d'écran : verre trempé</li>
+          <li>Bracelet en silicone</li>
+          <li>charge magnétique</li>
+          <li>Capacité de la batterie : 230 mAh</li>
+          <li>Temps de charge : Environ 2 heures</li>
+          <li>110 modes sportifs</li>
+          <li>Application Da Fit</li>
+          <li>Temps d'utilisation : jusqu'à 5 ~ 7 jours</li>
+          <li>Couleur: Noir</li>
+          <li>Garantie: 1 an</li>
+        </ul>
+        <p class="old">269.000 DT</p>
+        <p class="new">195.000 DT</p>
+        <button onclick="showDivOnPage2('div3')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Machine-A-Cafe-Espresso-Caffitaly-System-Luna-S32-R-Noir-bestbuytunisie.prixtunisie.best_-168x168.jpg" alt="Product 4" />
+        <h2>Machine À Café Espresso Caffitaly System Luna S32-R Noir</h2>
+        <ul>
+          <li>Référence: LUNA-S32R-BK – Machine à café Expresso Caffitaly Luna S32R</li>
+          <li>Capacité: 15 bars</li>
+          <li>Puissance: 1450 Watts</li>
+          <li>Capacité du réservoir: 1 L – Système de préparation de boissons intelligent</li>
+          <li>Garantie: 1 an + Paquet De 10 Capsules CAFFITALY</li>
+        </ul>
+        <p class="old">249.000 DT</p>
+        <p class="new">199.000 DT</p>
+        <button onclick="showDivOnPage2('div4')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp.jpg" alt="Product 5" />
+        <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
+        <ul>
+          <li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
+          <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
+          <li>Système d'exploitation: Android 11</li>
+          <li>Mémoire RAM: 4Go</li>
+          <li>Stockage: 64Go</li>
+          <li>Batterie: 5000mAh</li>
+          <li>Appareil Photo Frontale : 8.0MP f/2.0</li>
+          <li>Appareil Photo Arrière: Double 13.0 MP f/2.2, (large), PDAF + 2.0 MP f/2.4, (profondeur)</li>
+          <li>Garantie: 1 an</li>
+        </ul>
+        <p class="old">649.000 DT</p>
+        <p class="new">579.000 DT</p>
+        <button onclick="showDivOnPage2('div5')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
+        <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
+        <ul>
+          <li>Écran Gaming COOLER MASTER GA241</li>
+          <li>FLAT</li>
+          <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
+          <li>Résolution: 1920 x 1080 pixel</li>
+          <li>Format d'écran: 16:9</li>
+          <li>Luminosité: 250 cd/m²</li>
+          <li>Temps de réponse: 1 ms (MPRT)</li>
+          <li>Couleur: Noir</li>
+          <li>Garantie: 1 an</li>
+        </ul>
+        <p class="old">349.000 DT</p>
+        <p class="new">305.000 DT</p>
+        <button onclick="showDivOnPage2('div6')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
+        <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
+        <ul>
+          <li>Écran:15.6″ FULL HD ips</li>
+          <li>Processeur:I5-12450H</li>
+          <li>Système d'exploitation: Windows 11 Famille</li>
+          <li>Mémoire RAM:8Go DDR5-4800</li>
+          <li>Disque Dur:512Go SSD</li>
+          <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
+          <li>Garantie: 2 ans + Souris RVB Lenovo LOQ M100</li>
+        </ul>
+        <p class="old">2,299.000 DT</p>
+        <p class="new">2,149.000 DT</p>
+        <button onclick="showDivOnPage2('div7')">Add to Shopping Cart</button>
+      </section>
+      
+      <section class="product">
+        <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
+        <h2>Chaise Gaming Vert / Noire</h2>
+        <ul>
+          <li>Chaise pilote Gaming avec dossier haut</li>
+          <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
+          <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
+          <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
+          <li>Couleur : Vert & Noir</li>
+        </ul>
+        <p class="old">850.000 DT</p>
+        <p class="new">599.000 DT</p>
+        <button onclick="showDivOnPage2('div8')">Add to Shopping Cart</button>
+      </section>
+    </index>
+
+    <footer>   
+      <div class="french-line">
+        <img class="logo" src="logo2.jpg" alt="logo" />
+        <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
+      </div> 
+       
+      <div class="info">
+        <h3>Why buy from us?</h3>
+        <ul>
+          <li class="l">Wide selection of the latest electronics</li>
+          <li class="l">Competitive prices</li>
+          <li class="l">Knowledgeable staff</li>
+          <li class="l">Excellent customer service</li>
+        </ul>
+      </div>
+      
+      <div class="contact">
+        <h3>Contact us</h3>
+        <ul>
+          <li class="l">Phone: (+216)23344750</li>
+          <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
+          <li class="l">Location: Mega Market Tunisie Bouzayen: Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax. GSM: 29 937 501</li>
+          <li class="l">Opening Hours: 8:00AM</li>
+          <li class="l">Closing Hours: 18:00PM</li>
+        </ul>
+      </div>
+      
+      <div>
+        <hr style="color: aliceblue;"/>
+        <p class="copyright">&copy; 2024 Commercial Electronics Store</p>
+      </div>
+    </footer>
+
+    <script>
+      const imageContainer = document.getElementById("image-container");
+      const images = imageContainer.querySelectorAll("img");
+      let currentImageIndex = 0;
+
+      function setImagesWidth() {
+        const bodyWidth = document.body.clientWidth;
+        images.forEach(image => image.style.width = `${bodyWidth}px`);
+      }
+
+      function rotateImages() {
+        images[currentImageIndex].style.display = "none";
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        images[currentImageIndex].style.display = "block";
+      }
+      
+      window.onload = function(){
+        rotateImages();
+        rotateImages();
+        rotateImages();
+        setImagesWidth();
+      }
+      
+      // Set image width on initial load and window resize
+      setImagesWidth();
+      window.addEventListener("resize", setImagesWidth);
+
+      setInterval(rotateImages, 2000); 
+
+      // Shopping cart functionality
+      function showDivOnPage2(div) {
+        let notif = document.getElementById("notif");
+        notif.style.display = 'inline';
+        
+        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
+        myArray.push(div);
+        sessionStorage.setItem('myArray', JSON.stringify(myArray));
+        
+        document.getElementById("cart-indicator").textContent = "Your Product Has Been Added";
+        document.getElementById("cart-indicator").classList.add("active");
+
+        // Hide the indicator after 3 seconds
+        setTimeout(() => {
+          document.getElementById("cart-indicator").textContent = "";
+          document.getElementById("cart-indicator").classList.remove("active");
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

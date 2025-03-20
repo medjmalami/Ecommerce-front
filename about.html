@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>About Us - Commercial Electronics</title>
     <link rel="stylesheet" href="about.css" />
     <link
       rel="stylesheet"
@@ -15,28 +15,41 @@
   </head>
   <body>
     <header>
-      <a href="main.html">
-        <img style="float: left; margin-left: 20px" src="logo2.jpg" alt="logo"
-      /></a>
-      <h1>ABOUT US</h1>
+      <div class="header-content">
+        <a href="index.html">
+          <img src="logo2.jpg" alt="logo" class="header-logo">
+        </a>
+      </div>
     </header>
+    
     <nav>
       <ul>
-        <li><a href="main.html">Home</a></li>
         <li>
+          <i class="fa-solid fa-house"></i>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-store"></i>
           <a class="has-submenu" href="product.html">Products</a>
           <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
             <li><a href="product.html#Gaming">Gaming</a></li>
             <li><a href="product.html#Watch">Watch</a></li>
-            <li><a href="product.html#electronics">Electrical </a></li>
+            <li><a href="product.html#electronics">Electrical</a></li>
           </ul>
         </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="conatct.html">Contact</a></li>
         <li>
-          <a href="shopping.html">Shopping Cart </a>
+          <i class="fa-solid fa-address-card"></i>
+          <a href="about.html">About Us</a>
+        </li>
+        <li>
+          <i class="fa-sharp fa-solid fa-envelope"></i>
+          <a href="conatct.html">Contact</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <a href="shopping.html">Cart</a>
         </li>
       </ul>
     </nav>
@@ -113,12 +126,7 @@
     <br />
     <footer>
       <div class="french-line">
-        <img
-          style="float: left; margin-left: 20px"
-          class="logo"
-          src="logo2.jpg"
-          alt="logo"
-        />
+        <img class="logo" src="logo2.jpg" alt="logo" />
         <p class="slogan">
           La première préférence pour les dernières nouveautés en électronique.
         </p>

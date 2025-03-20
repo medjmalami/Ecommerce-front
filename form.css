@@ -1,12 +1,25 @@
-/* Style the form container with dark background */
-#orderForm {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background: #333;
-  color: #fff;
-  border-radius: 8px;
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(23, 23, 23, 1) 60%,
+    rgba(41, 41, 41, 1) 100%
+  );
+  color: #fff;
+}
+
+/* Header styles */
 header {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -15,23 +28,35 @@ header {
     rgba(23, 23, 23, 1) 60%,
     rgba(41, 41, 41, 1) 100%
   );
-  padding: 20px;
+  padding: 20px 20px 30px 20px; /* Increased bottom padding */
   text-align: center;
   color: #fff;
   z-index: 1000;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 120px; /* Use min-height instead of fixed height */
 }
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
+
+.header-content {
+  display: flex;
+  align-items: center;
 }
-input[type="radio"] {
-  display: inline-block;
-  margin-right: 10px;
+
+.header-logo {
+  max-width: 150px;
+  border-radius: 50px 20px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
+
+header h1 {
+  margin: 20px auto;
+  color: rgb(50, 142, 246);
+  font-size: 40px;
+}
+
+/* Navigation styles */
 nav {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -40,45 +65,151 @@ nav {
     rgba(23, 23, 23, 1) 60%,
     rgba(41, 41, 41, 1) 100%
   );
-  padding: 20px;
+  padding: 10px 0;
   text-align: center;
   position: sticky;
   top: 0;
-  width: auto;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  z-index: 1000;
 }
+
 nav ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 100px;
-  font-size: large;
+  position: relative;
+  margin: 0 15px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+  width: 120px;
+  height: 30px;
+}
+
+nav ul li:hover {
+  background-color: rgb(50, 142, 246);
+  border-radius: 25px;
 }
 
 nav ul li a {
-  color: #fff;
   text-decoration: none;
+  color: aliceblue;
+  font-weight: bold;
+  padding: 0 5px;
+  display: inline-block;
 }
-/* Style the form labels in white text */
+
+nav ul li i {
+  margin-right: 8px;
+  color: aliceblue;
+}
+
+/* Submenu styles */
+nav ul li ul.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background-color: #333;
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding-left: 0px;
+}
+
+nav ul li:hover ul.submenu {
+  display: flex;
+}
+
+nav ul li ul.submenu li {
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+  border: 1px solid aliceblue;
+  margin: 5px;
+  background-color: #222;
+  float: left;
+  border-radius: 5px;
+}
+
+nav ul li ul.submenu li:last-child {
+  border-bottom: none;
+}
+
+nav ul li ul.submenu li:hover {
+  background-color: aliceblue;
+  transform: none;
+  border-radius: 0;
+}
+
+nav ul li ul.submenu li:hover a {
+  color: #222;
+  font-weight: bold;
+}
+
+/* Total price display */
+#sum {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border: 1px solid rgb(50, 142, 246);
+  border-radius: 5px;
+  width: 300px;
+  padding: 15px 20px;
+  margin: 30px auto;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#sum span {
+  color: rgb(50, 142, 246);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* Form styles */
+#orderForm {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #333;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#orderForm h2 {
+  color: rgb(50, 142, 246);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+#orderForm h3 {
+  color: rgb(50, 142, 246);
+  margin: 15px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
 label {
-  margin-bottom: 5px;
   display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
   color: #fff;
 }
-body {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(5, 5, 5, 1) 0%,
-    rgba(23, 23, 23, 1) 60%,
-    rgba(41, 41, 41, 1) 100%
-  );
-}
-/* Style the form inputs and textareas with dark background and light text */
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -86,72 +217,74 @@ select,
 textarea,
 input[type="date"] {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #555;
   border-radius: 4px;
-  box-sizing: border-box;
   background: #444;
   color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
-/* Style the form submit button with dark background and light text */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.radio-group,
+.checkbox-group {
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"],
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  display: inline-block;
+}
+
 input[type="submit"] {
   background: #4caf50;
   color: white;
-  padding: 15px 20px;
+  padding: 15px 25px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.3s;
 }
 
 input[type="submit"]:hover {
   background: #45a049;
 }
 
-/* Style the error message with red text */
-#error-message {
-  color: red;
-  margin-top: 10px;
-}
-
-footer {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: auto;
-}
-footer div {
-  padding: 20px;
-  margin: 20px;
-  width: 400px;
+/* Thank you message */
+#thankyou {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
   text-align: center;
+  margin: 30px 0;
+  font-size: 24px;
+  color: #4caf50;
 }
 
-footer div img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-ul li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: aliceblue;
-}
-.shown {
+#thankyou.shown {
   opacity: 1;
-  animation: slideIn 0.5s ease-in-out forwards; /* Adjust animation name and properties */
+  animation: slideIn 0.5s ease-in-out forwards;
   color: aliceblue;
-  text-align: center;
 }
 
 @keyframes slideIn {
   from {
-    transform: translateY(20px); /* Adjust starting position if needed */
+    transform: translateY(20px);
     opacity: 0;
   }
   to {
@@ -159,90 +292,92 @@ a {
     opacity: 1;
   }
 }
-#thankyou {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out; /* Adjust duration and timing function as needed */
-}
-#sum {
-  color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: medium;
-  border: 1px solid aliceblue;
-  border-radius: 5px;
-  width: 300px;
-  padding: 10px 20px; /* Padding around text */
-  margin: 20px auto;
-  height: 40px;
-  font-size: large;
-  background-color: #333;
-}
-nav ul li ul {
-  position: absolute;
-  width: 200px;
-  background-color: #333;
-  display: none;
-  height: fit-content;
-  display: none;
-  padding-left: 0px;
-}
-nav ul li:hover ul {
-  display: block;
-}
-nav ul {
-  display: flex;
-}
-nav ul li ul li {
-  border: 1px solid aliceblue;
-  padding: 7px;
-  margin: 5px;
-  background-color: #222;
-  float: left;
-  width: 85%;
-  border-radius: 5px;
-}
-nav ul li ul li:hover a {
-  color: #222;
-  font-weight: bold;
-}
-nav ul li ul li:hover {
-  background-color: aliceblue;
-  transform: scale(0.9);
-  transition: all 0.6s;
-}
-nav ul li {
-  width: 120px;
-  height: 30px;
-  padding: 10px;
-}
-h3 {
-  color: rgb(50, 142, 246);
+
+#error-message {
+  color: #e74c3c;
   text-align: center;
-  margin: 40px;
-  font-size: 30px;
+  margin-top: 10px;
 }
-nav ul li:hover {
-  background-color: rgb(50, 142, 246);
-  border-radius: 25px;
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+  width: 100%;
 }
-header img {
-  border-radius: 50px 20px;
-}
-.logo {
-  border-radius: 50px 20px;
-}
+
 footer div {
-  width: 27%;
+  width: 30%;
+  min-width: 250px;
+  margin-bottom: 20px;
+  padding: 20px;
   margin: 20px;
+  text-align: center;
 }
-footer .french-line .slogan {
-  margin: 20px;
-  width: calc(100% - 10px);
+
+footer h3 {
+  color: rgb(50, 142, 246);
+  margin-bottom: 20px;
+  font-size: 22px;
 }
+
+footer ul li {
+  color: aliceblue;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
 footer .french-line {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+footer .logo {
+  max-width: 150px;
+  border-radius: 50px 20px;
+  margin-bottom: 15px;
+}
+
+footer .slogan {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+footer .copyright {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  nav ul li ul.submenu {
+    position: static;
+    width: 100%;
+  }
+
+  footer div {
+    width: 100%;
+  }
+
+  #orderForm {
+    padding: 15px;
+  }
 }

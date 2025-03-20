@@ -3,159 +3,172 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Checkout - Commercial Electronics</title>
     <link rel="stylesheet" href="form.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <header>
-    <a href="main.html"> <img style="float: left; margin-left: 20px; ;" src="logo2.jpg" alt="logo"></a>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="main.html">Home</a></li>
-      <li ><a class="has-submenu" href="product.html">Products</a>
-      <ul class="submenu">
-          <li><a href="product.html#phone">Phones</a></li>
-          <li><a href="product.html#pc">Computers</a></li>
-          <li><a href="product.html#Gaming">Gaming</a></li>
-          <li><a href="product.html#Watch">Watch</a></li>
-          <li><a href="product.html#electronics">Electrical </a></li>
-        </ul>
-      </li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="conatct.html">Contact</a></li>
-      <li>
-        <a href="shopping.html">Shopping Cart </a>
-      </li>
-    </ul>
-  </nav>
   <body>
-    <form id="orderForm" >
+    <header>
+      <div class="header-content">
+        <a href="index.html">
+          <img class="header-logo" src="logo2.jpg" alt="logo">
+        </a>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
+        <li><i class="fa-solid fa-store"></i><a class="has-submenu" href="product.html">Products</a>
+        <ul class="submenu">
+            <li><a href="product.html#phone">Phones</a></li>
+            <li><a href="product.html#pc">Computers</a></li>
+            <li><a href="product.html#Gaming">Gaming</a></li>
+            <li><a href="product.html#Watch">Watch</a></li>
+            <li><a href="product.html#electronics">Electrical </a></li>
+          </ul>
+        </li>
+        <li><i class="fa-solid fa-address-card"></i><a href="about.html">About Us</a></li>
+        <li><i class="fa-sharp fa-solid fa-envelope"></i><a href="conatct.html">Contact</a></li>
+        <li>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <a href="shopping.html">Shopping Cart </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div id="sum">Total: <span id="price"></span> DT</div>
+    
+    <form id="orderForm">
+      <h2>Delivery Information</h2>
+      
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required /><br /><br />
+      <input type="text" id="name" name="name" required />
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br /><br />
+      <input type="email" id="email" name="email" required />
 
       <label for="address">Address:</label>
-      <textarea id="address" name="address" required></textarea><br /><br />
+      <textarea id="address" name="address" required></textarea>
 
       <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" /><br /><br />
+      <input type="tel" id="phone" name="phone" required />
 
-      <dl>
-        <dt>Shipping Method:</dt>
-        <dd>
+      <div class="shipping-options">
+        <h3>Shipping Method:</h3>
+        <div class="radio-group">
           <label class="radio-label">
+            <input type="radio" id="standard" name="shipping" value="standard" checked />
             <span>Standard Shipping</span>
-            <input
-              type="radio"
-              id="standard"
-              name="shipping"
-              value="standard"
-            />
           </label>
 
           <label class="radio-label">
-            <span>Express Shipping</span>
             <input type="radio" id="express" name="shipping" value="express" />
+            <span>Express Shipping</span>
           </label>
-        </dd>
-      </dl>
-      <br />
+        </div>
+      </div>
 
-      <label for="subscribe">
-        Subscribe to Newsletter:
-        <input type="checkbox" id="subscribe" name="subscribe" /> </label
-      ><br /><br />
+      <div class="checkbox-group">
+        <label for="subscribe">
+          <input type="checkbox" id="subscribe" name="subscribe" />
+          Subscribe to Newsletter
+        </label>
+      </div>
 
       <label for="promo">Promo Code:</label>
-      <input type="text" id="promo" name="promo" /><br /><br />
+      <input type="text" id="promo" name="promo" />
 
-      <label for="gift-wrap">Gift Wrap:</label>
-      <input type="checkbox" id="gift-wrap" name="gift-wrap" /><br /><br />
+      <div class="checkbox-group">
+        <label for="gift-wrap">
+          <input type="checkbox" id="gift-wrap" name="gift-wrap" />
+          Gift Wrap
+        </label>
+      </div>
 
       <label for="delivery-date">Preferred Delivery Date:</label>
-      <input type="date" id="delivery-date" name="delivery-date" /><br /><br />
+      <input type="date" id="delivery-date" name="delivery-date" />
 
       <label for="comments">Additional Comments:</label>
-      <textarea id="comments" name="comments"></textarea><br /><br />
-      
+      <textarea id="comments" name="comments"></textarea>
 
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Complete Order" />
     </form>
-    <div id="sum">"The Totale : <span id="price"></span>  DT</div>
-    <div ><h2 id="thankyou"></h2></div>
+    
+    <div><h2 id="thankyou"></h2></div>
     <div id="error-message"></div>
+    
     <script>
       window.onload = function(){
         var prix = sessionStorage.getItem('prix');
         var element = document.getElementById('sum');
         var elem = element.querySelector("span")
-        elem.textContent = prix ;
+        elem.textContent = prix;
       }
-const form = document.getElementById("orderForm");
-const thankyou = document.getElementById("thankyou");
-const standardRadio = document.getElementById("standard");
-const expressRadio = document.getElementById("express");
+      
+      const form = document.getElementById("orderForm");
+      const thankyou = document.getElementById("thankyou");
+      const standardRadio = document.getElementById("standard");
+      const expressRadio = document.getElementById("express");
 
-standardRadio.addEventListener("change", handleShippingChange);
-expressRadio.addEventListener("change", handleShippingChange);
-function handleShippingChange(event) {
-  const shippingCost = event.target.value === "standard" ? 10 : 20;
-  var element = document.getElementById('sum');
-  var elem = element.querySelector("span");
-  var prix = parseInt(sessionStorage.getItem('prix')) || 0; // Handle missing price
-  var p = prix + shippingCost;
-  elem.textContent = p.toFixed(2) ;
-  ;
-}
+      standardRadio.addEventListener("change", handleShippingChange);
+      expressRadio.addEventListener("change", handleShippingChange);
+      
+      function handleShippingChange(event) {
+        const shippingCost = event.target.value === "standard" ? 10 : 20;
+        var element = document.getElementById('sum');
+        var elem = element.querySelector("span");
+        var prix = parseInt(sessionStorage.getItem('prix')) || 0; // Handle missing price
+        var p = prix + shippingCost;
+        elem.textContent = p.toFixed(2);
+      }
 
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        thankyou.textContent = `Thank you, ${name}, for your order!`;
+        var element = document.getElementById('sum');
+        element.style.display = 'none';
 
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = document.getElementById("name").value;
-  thankyou.textContent = `Thank you, ${name}, for your confidence!`;
-  var element = document.getElementById('sum');
-  element.style.display = 'none';
-
-  // Add class to trigger animation/transition
-  thankyou.classList.add("shown");
-  form.reset();
-  let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
-    myArray = [];
-    sessionStorage.setItem('myArray', JSON.stringify(myArray));
-});
+        // Add class to trigger animation/transition
+        thankyou.classList.add("shown");
+        form.reset();
+        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
+        myArray = [];
+        sessionStorage.setItem('myArray', JSON.stringify(myArray));
+      });
     </script>
-    <footer>
-        <div class="french-line"> <img style="float: left; margin-left: 20px" class="logo" src="logo2.jpg" alt="logo" />
-          <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
-        </div> 
-         
-          <div class="info">
-            <h3>Why buy from us?</h3>
-            <ul>
-              <li>Wide selection of the latest electronics</li>
-              <li>Competitive prices</li>
-              <li>Knowledgeable staff</li>
-              <li>Excellent customer service</li>
-            </ul>
-          </div>
-          <div class="contact">
-            <h3>Contact us</h3>
-            <ul>
-              <li>Phone: (+216)23344750</li>
-              <li>Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a> </li>
-              <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
-              <li>Opening Hours: 8:00AM</li>
-              <li>Closing Hours: 18:00PM</li>
-            </ul>
-          </div>
-        
-      <div>
-      <hr style="color: aliceblue;"/>
-      <p class="copyright">&copy; 2024 Commercial Electronics Store</p></div>
-    </footer>
     
+    <footer>
+      <div class="french-line">
+        <img class="logo" src="logo2.jpg" alt="logo" />
+        <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
+      </div> 
+       
+      <div class="info">
+        <h3>Why buy from us?</h3>
+        <ul>
+          <li>Wide selection of the latest electronics</li>
+          <li>Competitive prices</li>
+          <li>Knowledgeable staff</li>
+          <li>Excellent customer service</li>
+        </ul>
+      </div>
+      
+      <div class="contact">
+        <h3>Contact us</h3>
+        <ul>
+          <li>Phone: (+216)23344750</li>
+          <li>Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
+          <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
+          <li>Opening Hours: 8:00AM</li>
+          <li>Closing Hours: 18:00PM</li>
+        </ul>
+      </div>
+      
+      <div>
+        <hr style="color: aliceblue;"/>
+        <p class="copyright">&copy; 2024 Commercial Electronics Store</p>
+      </div>
+    </footer>
+  </body>
 </html>

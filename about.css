@@ -1,35 +1,3 @@
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-footer div {
-  padding: 20px;
-  margin: 20px;
-  width: 400px;
-  text-align: center;
-}
-
-footer div img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-main {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 * {
   margin: 0;
   padding: 0;
@@ -47,6 +15,7 @@ body {
     rgba(23, 23, 23, 1) 60%,
     rgba(41, 41, 41, 1) 100%
   );
+  color: #fff;
 }
 
 header {
@@ -64,6 +33,18 @@ header {
   position: relative;
   height: 100px;
 }
+
+header img {
+  border-radius: 50px 20px;
+}
+
+header h1 {
+  margin: 20px 30%;
+  color: rgb(50, 142, 246);
+  font-size: 40px;
+}
+
+/* Navbar Fixes */
 nav {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -72,112 +53,91 @@ nav {
     rgba(23, 23, 23, 1) 60%,
     rgba(41, 41, 41, 1) 100%
   );
-  padding: 20px;
+  padding: 10px 0;
   text-align: center;
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-}
-nav ul {
-  list-style: none;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin-right: 100px;
+  position: relative;
+  margin: 0 15px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
 }
 
-nav ul li a {
-  text-decoration: none;
-}
-ul li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: aliceblue;
-}
-nav ul li ul {
-  position: absolute;
-  width: 200px;
-  background-color: #333;
-  display: none;
-  height: fit-content;
-  display: none;
-}
-nav ul li:hover ul {
-  display: block;
-}
-nav ul {
-  display: flex;
-}
-nav ul li ul li {
-  border: 1px solid aliceblue;
-  padding: 7px;
-  margin: 5px 10px;
-  background-color: #222;
-  float: left;
-  width: 90%;
-  border-radius: 5px;
-}
-nav ul li ul li:hover a {
-  color: #222;
-  font-weight: bold;
-}
-nav ul li ul li:hover {
-  background-color: aliceblue;
-  transform: scale(0.9);
-  transition: all 0.6s;
-}
-nav ul li {
-  width: 120px;
-  height: 40px;
-  padding: 7px;
-}
-h3 {
-  color: rgb(50, 142, 246);
-  text-align: center;
-  margin: 10px 40px;
-  font-size: 30px;
-}
-header img {
-  margin: 20px;
-}
-header h1 {
-  margin: 20px 30%;
-  color: rgb(50, 142, 246);
-  font-size: 40px;
-}
 nav ul li:hover {
   background-color: rgb(50, 142, 246);
   border-radius: 25px;
 }
-header img {
-  border-radius: 50px 20px;
-}
-h2 {
-  color: rgb(50, 142, 246);
-  margin: 20px 100px;
-  text-align: center;
-  font-size: 35px;
-}
-.important {
+
+nav ul li a {
+  text-decoration: none;
+  color: aliceblue;
   font-weight: bold;
-  color: red;
-  text-align: center;
-  font-size: medium;
+  padding: 0 5px;
+  display: inline-block;
 }
+
+/* Submenu Fixes */
+nav ul li ul.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 180px;
+  background-color: #333;
+  display: none;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover ul.submenu {
+  display: flex;
+}
+
+nav ul li ul.submenu li {
+  margin: 0;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
+}
+
+nav ul li ul.submenu li:last-child {
+  border-bottom: none;
+}
+
+nav ul li ul.submenu li:hover {
+  background-color: aliceblue;
+  transform: none;
+  border-radius: 0;
+}
+
+nav ul li ul.submenu li:hover a {
+  color: #222;
+  font-weight: bold;
+}
+
 /* Section & list styles */
 #reasons {
-  border: 1px solid #ddd; /* Creates a subtle border around the section */
+  border: 1px solid #ddd;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
   margin: 20px;
-  padding: 10px; /* Rounded corners for a softer look */
 }
 
 #reasons h2 {
@@ -185,7 +145,7 @@ h2 {
 }
 
 #reasons ul {
-  list-style: none; /* Removes default bullet points */
+  list-style: none;
   padding: 0;
 }
 
@@ -195,7 +155,6 @@ h2 {
   align-items: center;
 }
 
-/* Reason icons & titles */
 #reasons li img {
   width: 50px;
   height: auto;
@@ -207,7 +166,6 @@ h2 {
   margin: 0;
 }
 
-/* Reason content (paragraph) */
 #reasons li p {
   margin: 0.5em 0;
 }
@@ -218,20 +176,134 @@ p {
   margin-top: 2em;
   color: aliceblue;
 }
-.logo {
-  border-radius: 50px 20px;
+
+.important {
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  font-size: medium;
 }
+
+/* Footer Fixes */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
 footer div {
   width: 30%;
-  margin: 20px;
+  min-width: 250px;
+  margin-bottom: 20px;
 }
-footer .french-line .slogan {
-  margin: 20px;
-  width: calc(100% - 10px);
+
+footer h3 {
+  color: rgb(50, 142, 246);
+  margin-bottom: 20px;
+  font-size: 22px;
 }
+
+footer .l {
+  color: aliceblue;
+  margin-bottom: 10px;
+}
+
 footer .french-line {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+footer .logo {
+  max-width: 150px;
+  border-radius: 50px 20px;
+  margin-bottom: 15px;
+}
+
+footer .slogan {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+footer .copyright {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+    width: 100%;
+  }
+
+  nav ul li ul.submenu {
+    position: static;
+    width: 100%;
+  }
+
+  footer div {
+    width: 100%;
+  }
+}
+/* Update the header and header-logo styles to match the other pages */
+header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(5, 5, 5, 1) 0%,
+    rgba(23, 23, 23, 1) 60%,
+    rgba(41, 41, 41, 1) 100%
+  );
+  padding: 20px 20px 30px 20px; /* Increased bottom padding */
+  text-align: center;
+  color: #fff;
+  z-index: 1000;
+  position: relative;
+  min-height: 120px; /* Use min-height instead of fixed height */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  max-width: 150px;
+  border-radius: 50px 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* Add this to center the main h2 heading */
+body > h2 {
+  text-align: center;
+  margin: 30px auto;
+  color: rgb(50, 142, 246);
+  font-size: 32px;
+}
+
+/* Update the footer logo styling */
+footer .french-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .logo {
+  max-width: 150px;
+  border-radius: 50px 20px;
+  margin-bottom: 15px;
+  /* Remove any inline styles */
 }
