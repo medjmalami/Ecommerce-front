@@ -18,20 +18,22 @@
     <nav>
       <ul>
         <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
-        <li><i class="fa-solid fa-store"></i><a class="has-submenu" href="product.html">Products</a>
-        <ul class="submenu">
+        <li>
+          <i class="fa-solid fa-store"></i>
+          <a class="has-submenu" href="product.html">Products</a>
+          <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
             <li><a href="product.html#Gaming">Gaming</a></li>
             <li><a href="product.html#Watch">Watch</a></li>
-            <li><a href="product.html#electronics">Electrical </a></li>
+            <li><a href="product.html#electronics">Electrical</a></li>
           </ul>
         </li>
         <li><i class="fa-solid fa-address-card"></i><a href="about.html">About Us</a></li>
         <li><i class="fa-sharp fa-solid fa-envelope"></i><a href="conatct.html">Contact</a></li>
         <li>
           <i class="fa-solid fa-cart-shopping"></i>
-          <a href="shopping.html">Shopping Cart </a>
+          <a href="shopping.html">Shopping Cart</a>
         </li>
       </ul>
     </nav>
@@ -99,10 +101,16 @@
     
     <script>
       window.onload = function(){
-        var prix = sessionStorage.getItem('prix');
+        var prix = sessionStorage.getItem('prix') || '0';
         var element = document.getElementById('sum');
-        var elem = element.querySelector("span")
+        var elem = element.querySelector("span");
         elem.textContent = prix;
+        
+        // Initialize shipping cost based on default selection
+        const shippingCost = document.getElementById("standard").checked ? 10 : 20;
+        var basePrice = parseInt(prix) || 0;
+        var totalPrice = basePrice + shippingCost;
+        elem.textContent = totalPrice.toFixed(2);
       }
       
       const form = document.getElementById("orderForm");
@@ -117,9 +125,9 @@
         const shippingCost = event.target.value === "standard" ? 10 : 20;
         var element = document.getElementById('sum');
         var elem = element.querySelector("span");
-        var prix = parseInt(sessionStorage.getItem('prix')) || 0; // Handle missing price
-        var p = prix + shippingCost;
-        elem.textContent = p.toFixed(2);
+        var basePrice = parseInt(sessionStorage.getItem('prix')) || 0;
+        var totalPrice = basePrice + shippingCost;
+        elem.textContent = totalPrice.toFixed(2);
       }
 
       form.addEventListener("submit", (event) => {
@@ -172,3 +180,4 @@
     </footer>
   </body>
 </html>
+

@@ -10,23 +10,13 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(5, 5, 5, 1) 0%,
-    rgba(23, 23, 23, 1) 60%,
-    rgba(41, 41, 41, 1) 100%
-  );
+  background: linear-gradient(90deg, rgba(5, 5, 5, 1) 0%, rgba(23, 23, 23, 1) 60%, rgba(41, 41, 41, 1) 100%);
 }
 
 /* Header styles */
 header {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(5, 5, 5, 1) 0%,
-    rgba(23, 23, 23, 1) 60%,
-    rgba(41, 41, 41, 1) 100%
-  );
+  background: linear-gradient(90deg, rgba(5, 5, 5, 1) 0%, rgba(23, 23, 23, 1) 60%, rgba(41, 41, 41, 1) 100%);
   padding: 20px 20px 30px 20px; /* Increased bottom padding */
   text-align: center;
   color: #fff;
@@ -56,12 +46,7 @@ header h1 {
 /* Navigation styles */
 nav {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(5, 5, 5, 1) 0%,
-    rgba(23, 23, 23, 1) 60%,
-    rgba(41, 41, 41, 1) 100%
-  );
+  background: linear-gradient(90deg, rgba(5, 5, 5, 1) 0%, rgba(23, 23, 23, 1) 60%, rgba(41, 41, 41, 1) 100%);
   padding: 10px 0;
   text-align: center;
   position: sticky;
@@ -222,7 +207,7 @@ index {
 /* Total and Buy button styles */
 #sum {
   color: red;
-  display: flex;
+  display: none; /* Hide by default */
   justify-content: center;
   align-items: center;
   font-size: medium;
@@ -243,7 +228,7 @@ index {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  display: none;
+  display: none; /* Hide by default */
   margin: 20px auto;
   font-size: 18px;
   font-weight: bold;
@@ -339,3 +324,4 @@ footer .copyright {
     width: 100%;
   }
 }
+

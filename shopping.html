@@ -14,55 +14,54 @@
     <script>
 window.onload = function() {
   var shoppingString = sessionStorage.getItem('myArray');
+  
+  // Hide elements by default
+  var buyElement = document.getElementById('buy');
+  var sumElement = document.getElementById('sum');
+  var emptyCartMessage = document.getElementById('p');
+  
+  if (buyElement) buyElement.style.display = 'none';
+  if (sumElement) sumElement.style.display = 'none';
+  if (emptyCartMessage) emptyCartMessage.style.display = 'block';
 
   if (shoppingString) {
     var shoppingList = JSON.parse(shoppingString);
     var prix = 0;
 
-    for (let i = 0; i < shoppingList.length; i++) {
-      const element = document.getElementById(shoppingList[i]);
+    // Only proceed if there are items in the shopping list
+    if (shoppingList && shoppingList.length > 0) {
+      for (let i = 0; i < shoppingList.length; i++) {
+        const element = document.getElementById(shoppingList[i]);
 
-      if (element) {
-        element.style.display = 'flex'; // Assuming you want to display the items
+        if (element) {
+          element.style.display = 'flex'; // Display the items
 
-        const elem = element.querySelector(".new"); // Get the first element with class "new"
-        if (elem) {
-          const priceText = elem.textContent;
-          const price = parseFloat(priceText);
-          if (!isNaN(price)) {
-            prix += price;
+          const elem = element.querySelector(".new"); // Get the first element with class "new"
+          if (elem) {
+            const priceText = elem.textContent;
+            const price = parseFloat(priceText);
+            if (!isNaN(price)) {
+              prix += price;
+            }
           }
         }
       }
-    }
 
-    const sumElement = document.getElementById("sum");
-    const priceElement = sumElement.querySelector("#price"); // Look for span with ID "price" within "sum"
-
-    if (priceElement) {
-      priceElement.textContent = prix.toString();
-      prix = prix.toString();
-      sessionStorage.setItem('prix', prix);
-       // Update content
-    } else {
-      console.error("Element with ID 'price' not found within 'sum' element.");
-    }
-
-    if (shoppingList.length>0){
-          var element = document.getElementById('buy');
-          element.style.display = 'block'
-          var element = document.getElementById('sum');
-          element.style.display = 'block'
-          var element = document.getElementById('p');
-          element.style.display = 'none'
-        }else{
-          var element = document.getElementById('buy');
-          element.style.display = 'none'
-          var element = document.getElementById('sum');
-          element.style.display = 'none'
-          var element = document.getElementById('p');
-          element.style.display = 'block'
+      // Only show total and buy button if there are items
+      if (shoppingList.length > 0) {
+        const priceElement = sumElement.querySelector("#price");
+        
+        if (priceElement) {
+          priceElement.textContent = prix.toString();
+          sessionStorage.setItem('prix', prix.toString());
         }
+        
+        // Show relevant elements
+        if (buyElement) buyElement.style.display = 'block';
+        if (sumElement) sumElement.style.display = 'block';
+        if (emptyCartMessage) emptyCartMessage.style.display = 'none';
+      }
+    }
   }
 };
     </script>
@@ -601,7 +600,7 @@ window.onload = function() {
           <button onclick="removed('div28')">Remove</button>
         </section>
       </index>
-      <div id="sum">"The Totale : <span id="price"></span>  DT</div>
+      <div id="sum">Total: <span id="price"></span> DT</div>
       <h3 id="p">Your Shopping Cart is empty </h3>
       
       <button onclick="gotoform()" id="buy" class="buy-button">Buy</button>
@@ -625,40 +624,36 @@ window.onload = function() {
             
             shoppingList.splice(index, 1);
 
-
-
-            var prix = element.querySelector("p.new") ;
-            prix = prix.textContent
-            prix = parseFloat(prix);
+            // Get price of removed item
+            var priceElement = element.querySelector("p.new");
+            var priceText = priceElement.textContent;
+            var itemPrice = parseFloat(priceText);
+            
+            // Update total price
             const sumElement = document.getElementById("sum");
-            var priceElement = sumElement.querySelector("span");
-            priceElement= priceElement.textContent
-            priceElement = parseFloat(priceElement);
-            var k = sumElement.querySelector("span");
-            k.textContent = priceElement - prix ;
-            prix = k.toString();
-            sessionStorage.setItem('prix', prix);
+            var totalElement = sumElement.querySelector("span");
+            var currentTotal = parseFloat(totalElement.textContent);
+            var newTotal = currentTotal - itemPrice;
             
-
-
-
-            if (shoppingList.length>0){
-          var element = document.getElementById('buy');
-          element.style.display = 'block'
-          var element = document.getElementById('sum');
-          element.style.display = 'block'
-          var element = document.getElementById('p');
-          element.style.display = 'none'
-        }else{
-          var element = document.getElementById('buy');
-          element.style.display = 'none'
-          var element = document.getElementById('sum');
-          element.style.display = 'none'
-          var element = document.getElementById('p');
-          element.style.display = 'block'
-        }
+            // Update display
+            totalElement.textContent = newTotal.toFixed(2);
+            
+            // Update session storage
+            sessionStorage.setItem('prix', newTotal.toString());
+            
+            // Show/hide elements based on cart status
+            if (shoppingList.length > 0) {
+              document.getElementById('buy').style.display = 'block';
+              document.getElementById('sum').style.display = 'block';
+              document.getElementById('p').style.display = 'none';
+            } else {
+              document.getElementById('buy').style.display = 'none';
+              document.getElementById('sum').style.display = 'none';
+              document.getElementById('p').style.display = 'block';
+            }
+            
+            // Update shopping list in session storage
             sessionStorage.setItem('myArray', JSON.stringify(shoppingList));
-            
           }
         }
       </script>
@@ -681,7 +676,7 @@ window.onload = function() {
           <h3>Contact us</h3>
           <ul>
             <li>Phone: (+216)23344750</li>
-            <li>Email: <a href="/cdn-cgi/l/email-protection#52383f333e3f3d3a333f3736333f3b3c376312353f333b3e7c313d3f"><span class="__cf_email__" data-cfemail="b2d8dfd3dedfdddad3dfd7d6d3dfdbdcd783f2d5dfd3dbde9cd1dddf">[email&#160;protected]</span></a> </li>
+            <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a> </li>
             <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
             <li>Opening Hours: 8:00AM</li>
             <li>Closing Hours: 18:00PM</li>
@@ -694,3 +689,4 @@ window.onload = function() {
   </footer>
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
+
