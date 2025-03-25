@@ -76,10 +76,16 @@ window.onload = function() {
       </div>
     </header>
     <nav>
-      <ul>
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
         <li><i class="fa-solid fa-house"></i><a href="index.html">Home</a></li>
-        <li><i class="fa-solid fa-store"></i><a class="has-submenu" href="product.html">Products</a>
-        <ul class="submenu">
+        <li class="has-submenu">
+          <i class="fa-solid fa-store"></i>
+          <a href="product.html">Products</a>
+          <span class="submenu-toggle"><i class="fa-solid fa-chevron-down"></i></span>
+          <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
             <li><a href="product.html#Gaming">Gaming</a></li>
@@ -97,565 +103,646 @@ window.onload = function() {
     </nav>
     <index>
           
-        <section id="div1" class="product">
-          <img
-            src="chaise noire 3fc66dab.jpg_640x640Q90.jpg_.webp"
-            alt="Product 1"
-          />
-          <h2>Chaise Gaming Noir / Blanc -4400015083-BK-WH</h2>
-          <p>
-  
-              <ul>
-              <li>Chaise pilote Gaming avec dossier haut</li>
-              <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
-              <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
-              <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
-              <li>Couleur : Noir et Blanc</li>
-          </ul></p>
-          <p class="old">850.000 DT</p>
-          <p class="new">599.000 DT</p>
-          
-          <button onclick="removed('div1')">Remove</button>
-        </section>
-        <section id="div2" class="product">
-          <img
-            src="Mixeur-Plongeant-3en1-Tristar-MX-4154-Blanc-bestbuytunisie.prixtunisie.best_-168x168.jpg"
-            alt="Product 2"
-          />
-          <h2>Mixeur Plongeant 3en1 Tristar MX-4154 Blanc</h2>
-          <p><ul>
-  
-              <li>Référence: MX-4154</li>
-              <li>Mixeur Tristar 3en1 avec pied en inox</li>
-              <li>Puissance: 200 Watts</li>
-              <li>Capacité bol: 500 ml</li>
-              <li>Utilisation confortable grâce à la forme ergonomique</li>
-              <li> Deux réglages de vitesses pour un mélange grossier et fin</li>
-              <li>Couleur: Blanc</li>
-              <li>Garantie: 1 an</li>
-          </ul></p>
-          <p class="old">129.000 DT</p>
-          <p class="new">105.000 DT</p>
-          <button onclick="removed('div2')">Remove</button>
-        </section>
-        <section id="div3" class="product">
-          <img src="Montre-Connecte-Colmi-C61-Noir-3.webp" alt="Product 3" />
-          <h2>Montre Connecté Colmi C61 – Noir</h2>
-          <p>
-  
-              <ul>
-                  <li>Écran : 1.9″ IPS Tactile 240 x 280 px</li>
-                  <li>Bluetooth 5.1</li>
-                  <li>Protection d'écran : verre trempé</li>
-                  <li>Bracelet en silicone</li>
-                  <li>charge magnétique</li>
-                  <li>Capacité de la batterie : 230 mAh</li>
-                  <li>Temps de charge : Environ 2 heures</li><li>110 modes sportifs</li>
-              <li>Application Da Fit</li>
-              <li>Temps d'utilisation : jusqu'à 5 ~ 7 jours</li>
-              <li>Couleur: Noir</li>
-          <li> Garantie: 1 an</li></ul></p>
-          <p class="old">269.000 DT</p>
-          <p class="new">195.000 DT</p>
-          <button onclick="removed('div3')">Remove</button>
-        </section>
-        <section id="div4" class="product">
-          <img
-            src="Machine-A-Cafe-Espresso-Caffitaly-System-Luna-S32-R-Noir-bestbuytunisie.prixtunisie.best_-168x168.jpg"
-            alt="Product 4"
-          />
-          <h2>Machine À Café Espresso Caffitaly System Luna S32-R Noir</h2>
-          <p>
-              <ul>
-                  <li>Référence: LUNA-S32R-BK – Machine à café Expresso Caffitaly Luna
-                      S32R</li>
-                  <li>Capacité: 15 bars</li>
-                  <li>Puissance: 1450 Watts</li>
-                  <li>Capacité du
-                      réservoir: 1 L – Système de préparation de boissons intelligent</li>
-                  <li >Garantie: 1
-                      an + Paquet De 10 Capsules CAFFITALY</li>
-              </ul>
-            
-          </p>
-          <p class="old">249.000 DT</p>
-          <p class="new">199.000 DT</p>
-          <button onclick="removed('div4')">Remove</button>
-        </section>
-      
-      <section id="div5" class="product">
-        <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp" alt="Product 5" />
-        <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
-  
-          <p><ul><li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
-          <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
-          <li>Système d'exploitation: Android 11</li>
-          <li>Mémoire RAM: 4Go</li>
-          <li>Stockage: 64Go</li>
-          <li> Batterie: 5000mAh</li>
-          <li>Appareil Photo Frontale : 8.0MP f/2.0</li>
-          <li>Appareil Photo Arrière: Double 13.0 MP f/2.2, (large), PDAF + 2.0 MP f/2.4, (profondeur)</li>
-          <li>Garantie: 1 an</li></ul></p>
-        <p class="old">649.000 DT</p>
-        <p class="new">579.000 DT</p>
-        <button onclick="removed('div5')">Remove</button>
+      <section id="div1" class="product">
+        <img
+          src="chaise noire 3fc66dab.jpg_640x640Q90.jpg_.webp"
+          alt="Product 1"
+        />
+        <h2>Chaise Gaming Noir / Blanc -4400015083-BK-WH</h2>
+        <p>
+
+            <ul>
+            <li>Chaise pilote Gaming avec dossier haut</li>
+            <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
+            <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
+            <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
+            <li>Couleur : Noir et Blanc</li>
+        </ul></p>
+        <p class="old">850.000 DT</p>
+        <p class="new">599.000 DT</p>
+        
+        <button onclick="removed('div1')">Remove</button>
       </section>
-  
-  <section id="div6" class="product">
-    <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
-    <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
-      <p><ul>
-           
-  
-          <li>Écran Gaming COOLER MASTER GA241</li>
-          <li>FLAT</li>
-          <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
-          <li>Résolution: 1920 x 1080 pixel</li>
-          <li>Format d'écran: 16:9</li>
-          <li>Luminosité: 250 cd/m²</li>
-          <li>Temps de réponse: 1 ms (MPRT)</li>
-          <li>Couleur: Noir</li>
-          <li>Garantie: 1 an</li>
-      </ul></p>
-    <p class="old">349.000 DT</p>
-    <p class="new">305.000 DT</p>
-    <button onclick="removed('div6')">Remove</button>
-  </section>
-  
-  <section id="div7" class="product">
-    <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
-    <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
-      <p><ul>
+      <section id="div2" class="product">
+        <img
+          src="Mixeur-Plongeant-3en1-Tristar-MX-4154-Blanc-bestbuytunisie.prixtunisie.best_-168x168.jpg"
+          alt="Product 2"
+        />
+        <h2>Mixeur Plongeant 3en1 Tristar MX-4154 Blanc</h2>
+        <p><ul>
+
+            <li>Référence: MX-4154</li>
+            <li>Mixeur Tristar 3en1 avec pied en inox</li>
+            <li>Puissance: 200 Watts</li>
+            <li>Capacité bol: 500 ml</li>
+            <li>Utilisation confortable grâce à la forme ergonomique</li>
+            <li> Deux réglages de vitesses pour un mélange grossier et fin</li>
+            <li>Couleur: Blanc</li>
+            <li>Garantie: 1 an</li>
+        </ul></p>
+        <p class="old">129.000 DT</p>
+        <p class="new">105.000 DT</p>
+        <button onclick="removed('div2')">Remove</button>
+      </section>
+      <section id="div3" class="product">
+        <img src="Montre-Connecte-Colmi-C61-Noir-3.webp" alt="Product 3" />
+        <h2>Montre Connecté Colmi C61 – Noir</h2>
+        <p>
+
+            <ul>
+                <li>Écran : 1.9″ IPS Tactile 240 x 280 px</li>
+                <li>Bluetooth 5.1</li>
+                <li>Protection d'écran : verre trempé</li>
+                <li>Bracelet en silicone</li>
+                <li>charge magnétique</li>
+                <li>Capacité de la batterie : 230 mAh</li>
+                <li>Temps de charge : Environ 2 heures</li><li>110 modes sportifs</li>
+            <li>Application Da Fit</li>
+            <li>Temps d'utilisation : jusqu'à 5 ~ 7 jours</li>
+            <li>Couleur: Noir</li>
+        <li> Garantie: 1 an</li></ul></p>
+        <p class="old">269.000 DT</p>
+        <p class="new">195.000 DT</p>
+        <button onclick="removed('div3')">Remove</button>
+      </section>
+      <section id="div4" class="product">
+        <img
+          src="Machine-A-Cafe-Espresso-Caffitaly-System-Luna-S32-R-Noir-bestbuytunisie.prixtunisie.best_-168x168.jpg"
+          alt="Product 4"
+        />
+        <h2>Machine À Café Espresso Caffitaly System Luna S32-R Noir</h2>
+        <p>
+            <ul>
+                <li>Référence: LUNA-S32R-BK – Machine à café Expresso Caffitaly Luna
+                    S32R</li>
+                <li>Capacité: 15 bars</li>
+                <li>Puissance: 1450 Watts</li>
+                <li>Capacité du
+                    réservoir: 1 L – Système de préparation de boissons intelligent</li>
+                <li >Garantie: 1
+                    an + Paquet De 10 Capsules CAFFITALY</li>
+            </ul>
           
-          <li>Écran:15.6″ FULL HD ips</li>
-      <li>Processeur:I5-12450H</li>
-      <li>Système d'exploitation: Windows 11 Famille</li>
-      <li>Mémoire RAM:8Go DDR5-4800</li>
-      <li>Disque Dur:512Go SSD</li>
-      <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
-      <li>Garantie: 2 ans
-          + Souris RVB Lenovo LOQ M100</li></ul></p>
-    <p class="old">2,299.000 DT</p>
-    <p class="new">2,149.000 DT</p>
-    <button onclick="removed('div7')">Remove</button>
-  </section>
-  
-  <section id="div8" class="product">
-    <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
-    <h2>Chaise Gaming Vert / Noire</h2>
-  
-      <p><ul><li>Chaise pilote Gaming avec dossier haut</li>
-      <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
-      <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
-      <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
-      <li>Couleur : Vert & Noir</li></ul></p>
-    <p class="old">850.000 DT</p>
-    <p class="new">599.000 DT</p>
-    <button onclick="removed('div8')">Remove</button>
+        </p>
+        <p class="old">249.000 DT</p>
+        <p class="new">199.000 DT</p>
+        <button onclick="removed('div4')">Remove</button>
+      </section>
     
-    
+    <section id="div5" class="product">
+      <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp.jpg" alt="Product 5" />
+      <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
+
+        <p><ul><li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
+        <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
+        <li>Système d'exploitation: Android 11</li>
+        <li>Mémoire RAM: 4Go</li>
+        <li>Stockage: 64Go</li>
+        <li> Batterie: 5000mAh</li>
+        <li>Appareil Photo Frontale : 8.0MP f/2.0</li>
+        <li>Appareil Photo Arrière: Double 13.0 MP f/2.2, (large), PDAF + 2.0 MP f/2.4, (profondeur)</li>
+        <li>Garantie: 1 an</li></ul></p>
+      <p class="old">649.000 DT</p>
+      <p class="new">579.000 DT</p>
+      <button onclick="removed('div5')">Remove</button>
+    </section>
+
+<section id="div6" class="product">
+  <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
+  <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
+    <p><ul>
+         
+
+        <li>Écran Gaming COOLER MASTER GA241</li>
+        <li>FLAT</li>
+        <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
+        <li>Résolution: 1920 x 1080 pixel</li>
+        <li>Format d'écran: 16:9</li>
+        <li>Luminosité: 250 cd/m²</li>
+        <li>Temps de réponse: 1 ms (MPRT)</li>
+        <li>Couleur: Noir</li>
+        <li>Garantie: 1 an</li>
+    </ul></p>
+  <p class="old">349.000 DT</p>
+  <p class="new">305.000 DT</p>
+  <button onclick="removed('div6')">Remove</button>
+</section>
+
+<section id="div7" class="product">
+  <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
+  <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
+    <p><ul>
+        
+        <li>Écran:15.6″ FULL HD ips</li>
+    <li>Processeur:I5-12450H</li>
+    <li>Système d'exploitation: Windows 11 Famille</li>
+    <li>Mémoire RAM:8Go DDR5-4800</li>
+    <li>Disque Dur:512Go SSD</li>
+    <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
+    <li>Garantie: 2 ans
+        + Souris RVB Lenovo LOQ M100</li></ul></p>
+  <p class="old">2,299.000 DT</p>
+  <p class="new">2,149.000 DT</p>
+  <button onclick="removed('div7')">Remove</button>
+</section>
+
+<section id="div8" class="product">
+  <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
+  <h2>Chaise Gaming Vert / Noire</h2>
+
+    <p><ul><li>Chaise pilote Gaming avec dossier haut</li>
+    <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
+    <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
+    <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
+    <li>Couleur : Vert & Noir</li></ul></p>
+  <p class="old">850.000 DT</p>
+  <p class="new">599.000 DT</p>
+  <button onclick="removed('div8')">Remove</button>
   
   
-  </section>
-        <!-- Add more product sections here -->
-        <section id="div9" class="product">
-          <img
-            src="smartphone-samsung-galaxy-a55-8256g-5g-violet (1).jpg"
-            alt="Product 1"
-          />
-          <h2>SMARTPHONE SAMSUNG GALAXY A55 8/256G 5G / VIOLET</h2>
-          <p>
-              <ul>
-              <li>Ecran 6.6" Super AMOLED, Full HD+ 1080 x 2340 pixels - 120 Hz</li>
-              <li>Processeur Octa-Core Exynos 1480</li>
-              <li> RAM 8 Go</li>
-              <li>Mémoire 256 Go</li>
-              <li> Batterie 5000 mAh</li>
-              <li>Résolution Enregistrement Vidéo : UHD 4K</li>
-              <li>Garantie 1 an</li>
-              <li>Couleur : Violet</li>
-          </ul></p>
-          <p class="new">1999.000 DT</p>
-          <button onclick="removed('div9')">Remove</button>
-        </section>
-      <section id="div10" class="product">
-          <img
-            src="smartphone-xiaomi-redmi-note-13-pro-8go-256go-purple.jpg"
-            alt="Product 2"
-          />
-          <h2>Smartphone XIAOMI Redmi Note 13 PRO + 5G/ 12GO /512GO /WHITE</h2>
-          <p>
-              <ul>
-              <li> Écran 6.67", AMOLED 1.5K, 1220 x 2712 pixels</li>
-              <li>Processeur Octa-Core Exynos 1480</li>
-              <li> RAM 8 Go</li>
-              <li>Mémoire 256 Go</li>
-              <li>Taux de rafraîchissement 120Hz</li>
-              <li> Batterie 5100 mAh Type-C</li>
-              <li>Charge Rapide 120W</li>
-              <li>Garantie 1 an</li>
-              <li> Couleur: Blanc</li>
-          </ul></p>
-          <p class="new">1599.000 DT</p>
-          <button onclick="removed('div10')">Remove</button>
-        </section>
-      <section id="div11" class="product">
-          <img
-            src="smartphone-samsung-galaxy-a55-8256g-5g-noir-.jpg"
-            alt="Product 3"
-          />
-          <h2>SMARTPHONE SAMSUNG GALAXY A55 8/256G 5G / JAUNE</h2>
-          <p>
-              <ul>
-              <li>Ecran 6.6" Super AMOLED, Full HD+ 1080 x 2340 pixels</li>
-              <li>Processeur Octa-Core Exynos 1480</li>
-              <li> RAM 8 Go</li>
-              <li>Mémoire 256 Go</li>
-              <li>Appareil Photo 50 MP + 12 MP  + 5 MP</li>
-              <li> Batterie 5100 mAh Type-C</li>
-              <li>Charge Rapide 120W</li>
-              <li>Garantie 1 an</li>
-              <li>Couleur : Jaune</li>
-          </ul></p>
-          <p class="new">1599.000 DT</p>
-          <button onclick="removed('div11')">Remove</button>
-        </section>
-        <section id="div12" class="product">
-          <img
-            src="telephone-portable-apple-iphone-11-64-go-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>TÉLÉPHONE PORTABLE APPLE IPHONE 11 / 64 GO / NOIR</h2>
-          <p>
-              <ul>
-              <li>cran 6.1" Liquid Retina HD IPS (828 x 1792px)</li>
-              <li>Processeur Apple A13 Bionic Hexa-Core</li>
-              <li>RAM 4 Go</li>
-              <li>Mémoire 64 Go</li>
-              <li> Batterie 3110 mAh</li>
-              <li>Résolution Enregistrement Vidéo : UHD 4K</li>
-              <li>Garantie 1 an</li>
-              <li>Couleur : Noire</li>
-          </ul></p>
-          <p class="new">1999.000 DT</p>
-          <button onclick="removed('div12')">Remove</button>
-        </section>
-        <section id="div13" class="product">
-          <img
-            src="pc-portable-lenovo-ideapad-gaming-3-15ach6-amd-ryzen-5-16go-rtx-2050-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>PC PORTABLE LENOVO IDEAPAD GAMING 3 15ACH6 AMD RYZEN 5 / 16GO / RTX 2050 / NOIR</h2>
-          <p>
-              <ul>
-              <li>Écran 15.6" Full HD IPS, 144Hz</li>
-              <li>Processeur : AMD Ryzen™ 5 5500H</li>
-              <li>Mémoire RAM : 16Go</li>
-              <li>Carte Graphique : NVIDIA GeForce RTX 2050</li>
-              
-              <li>Garantie 2 an</li>
-              <li>Couleur : Noir</li>
-          </ul></p>
-          <p class="new">2099.000 DT</p>
-          <button onclick="removed('div13')">Remove</button>
-        </section>
-        <section id="div14" class="product">
-          <img
-            src="pc-portable-lenovo-loq-15irh8-i5-12450h-rtx-2050-4g-8-go-gris-avec-souris-rvb-lenovo-loq-m100.jpg"
-            alt="Product 4"
-          />
-          <h2>PC PORTABLE LENOVO LOQ 15IRH8 / I5-12450H / RTX 2050 4G / 8 GO </h2>
-          <p>
-              <ul>
-              <li>Écran 15.6" FHD (1920 x 1080) IPS antireflet 144 Hz</li>
-              <li>Processeur Intel Core i5-12450H</li>
-              <li>Disque SSD 512 Go M.2 2242 PCIe NVMe</li>
-              <li>Carte Graphiques NVIDIA GeForce RTX 2050</li>
-              
-              <li>Garantie 2 an</li>
-              <li>Couleur : Noir</li>
-          </ul></p>
-          <p class="new">2149.000 DT</p>
-          <button onclick="removed('div14')">Remove</button>
-        </section>
-        <section id="div15" class="product">
-          <img
-            src="pc-portable-asus-tuf-gaming-a15-fa506nf-ryzen-5-7535hs-rtx-2050-4g-8-go-windows-11-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>PC PORTABLE ASUS TUF GAMING A15 FA506NF / RYZEN 5 7535HS / RTX 2050 4G / 8 GO / WINDOWS 11 / NOIR</h2>
-          <p>
-              <ul>
-              <li>Écran 15.6" Full HD (1920 x 1080), antireflet</li>
-              <li>Taux de rafraîchissement: 144 Hz</li>
-              <li>Processeur AMD Ryzen 5 7535HS</li>
-              <li>Mémoire 8 Go DDR5</li>
-              <li>Garantie 2 an</li>
-              <li>Couleur : Noir</li>
-          </ul></p>
-          <p class="new">2149.000 DT</p>
-          <button onclick="removed('div15')">Remove</button>
-        </section>
-        <section id="div16" class="product">
-          <img
-            src="pc-portable-gamer-asus-vivobook-16x-s3605zf-i5-12500h-rtx-2050-4g-8-go-512-go-windows-11-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>PC PORTABLE GAMER ASUS VIVOBOOK 16X S3605ZF / I5-12500H / RTX 2050 4G / 8 GO / 512 GO / WINDOWS 11</h2>
-          <p>
-              <ul>
-              <li>Écran 16" WUXGA (1920 x 1 200)</li>
-              <li>Taux de rafraîchissement 120 Hz</li>
-              <li>Processeur IntelCore i5-12500H 12e génération</li>
-              <li>Mémoire 8 Go DDR4</li>
-              <li>Garantie 2 an</li>
-              <li>Couleur : Noir</li>
-          </ul></p>
-          <p class="new">2199.000 DT</p>
-          <button onclick="removed('div16')">Remove</button>
-        </section>
-        <section id="div17" class="product">
-          <img
-            src="refroidisseur-usb-sbox-cp-101.jpg"
-            alt="Product 4"
-          />
-          <h2>REFROIDISSEUR USB SBOX CP-101</h2>
-          <p>
-              <ul>
-              <li>Pour Pc portable 15.6"</li>
-              <li>Ventilateur: 2 x 140 mm (LED bleue)</li>
-              <li>Vitesse du ventilateur: 800</li>
-          </ul></p>
-          <p class="new">44.000 DT</p>
-          <button onclick="removed('div17')">Remove</button>
-        </section>
-        <section id="div18" class="product">
-          <img
-            src="clavier-gaming-xtrike-kb-280-rgb-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>CLAVIER GAMING XTRIKE ME KB-280 / RGB / NOIR</h2>
-          <p>
-              <ul>
-              <li>Clavier Gaming Xtrike Me KB-280</li>
-              <li>Type d'interface USB </li>
-              <li>Connectivité filaire USB </li>
-          </ul></p>
-          <p class="new">20.000 DT</p>
-          <button onclick="removed('div18')">Remove</button>
-        </section>
-        <section id="div19" class="product">
-          <img
-            src="tapis-de-souris-havit-mp838.jpg"
-            alt="Product 4"
-          />
-          <h2>TAPIS DE SOURIS HAVIT MP838</h2>
-          <p>
-              <ul>
-              <li>Tapis de souris Havit MP838</li>
-              <li>Surface en tissu à mailles fines</li>
-              <li>base en caoutchouc antidérapante</li>
-          </ul></p>
-          <p class="new">5.000 DT</p>
-          <button onclick="removed('div19')">Remove</button>
-        </section>
-        
-        <section id="div20" class="product">
-          <img
-            src="souris-usb-jedel-m66.jpg"
-            alt="Product 4"
-          />
-          <h2>SOURIS USB JEDEL M66</h2>
-          <p>
-              <ul>
-              <li>Souris USB JeDel M66</li>
-              <li>Interface USB</li>
-              <li>Rétroéclairage LED 7 Couleurs</li>
-          </ul></p>
-          <p class="new">6.000 DT</p>
-          <button onclick="removed('div20')">Remove</button>
-        </section>
-        <section id="div21" class="product">
-          <img
-            src="haylou-smartwatch-2-pro_10-860x860.jpeg"
-            alt="Product 4"
-          />
-          <h2>Montre Connectée Haylou Watch 2 Pro</h2>
-          <p>
-              <ul>
-              <li> Bluetooth Call</li>
-              <li> Des fonctionnalités avancées à votre poignet</li>
-              <li>Camera Photos</li>
-          </ul></p>
-          <p class="new">139.00 DT</p>
-          <button onclick="removed('div21')">Remove</button>
-        </section>
-        <section id="div22" class="product">
-          <img
-            src="montre.jpg"
-            alt="Product 4"
-          />
-          <h2>Montre Connectée Mibro T1</h2>
-          <p>
-              <ul>
-              <li>une montre intelligente</li>
-              <li>un style de vie actif</li>
-              <li>suivi de santé</li>
-          </ul></p>
-          <p class="new">139.00 DT</p>
-          <button onclick="removed('div22')">Remove</button>
-        </section>
-        
-        <section id="div23" class="product">
-          <img
-            src="87577458_9761841878.jpeg"
-            alt="Product 4"
-          />
-          <h2>Montre Connectée Amazfit Bip 3 pro</h2>
-          <p>
-              <ul>
-              <li>un écran tactile TFT de 1,69 pouce</li>
-              <li>résolution de 240×280 pixels</li>
-              <li>offre une connectivité Bluetooth 5.0</li>
-          </ul></p>
-          <p class="new">299.00 DT</p>
-          <button onclick="removed('div23')">Remove</button>
-        </section>
-        <section id="div24" class="product">
-          <img
-            src="bison-x10-black2_62_1.jpg"
-            alt="Product 4"
-          />
-          <h2>Montre Connectée Mibro X1</h2>
-          <p>
-              <ul>
-              <li>votre partenaire santé et fitness au quotidien</li>
-              <li> Suivez vos activités</li>
-              <li>améliorez votre bien-être</li>
-          </ul></p>
-          <p class="new">189.00 DT</p>
-          <button onclick="removed('div24')">Remove</button>
-        </section>
-        <section id="div25" class="product">
-          <img
-            src="four-electrique-focus-f35r-35-l-rouge.jpg"
-            alt="Product 4"
-          />
-          <h2>FOUR ÉLECTRIQUE FOCUS F35G 35 L / GRIS</h2>
-          <p>
-              <ul>
-              <li>Puissance: 1800 Watts</li>
-              <li>Volume: 35 Litres</li>
-              <li>Température: Réglable jusqu'à 250°C</li>
-          </ul></p>
-          <p class="new">159.00 DT</p>
-          <button onclick="removed('div25')">Remove</button>
-        </section>
-        <section id="div26" class="product">
-          <img
-            src="mixeur-plongeant-tristar-mx-4800-250w-blanc.jpg"
-            alt="Product 4"
-          />
-          <h2>MIXEUR PLONGEANT TRISTAR MX-4800 / 250W / BLANC</h2>
-          <p>
-              <ul>
-              <li>Puissance 250W</li>
-              <li>2x vitesses</li>
-              <li>2x lames</li>
-              <li>Matériau du pied Synthétique</li>
-          </ul></p>
-          <p class="new">59.00 DT</p>
-          <button onclick="removed('div26')">Remove</button>
-        </section>
-        <section id="div27" class="product">
-          <img
-            src="presse-agrumes-techwood-tpf-36-20w-noir.jpg"
-            alt="Product 4"
-          />
-          <h2>PRESSE AGRUMES TECHWOOD TPF-36 / 20W / NOIR</h2>
-          <p>
-              <ul>
-              <li>Démarrage automatique par pression sur le cône</li>
-              <li>Double sens de rotation</li>
-              <li>Bol verseur translucide gradué</li>
-              
-          </ul></p>
-          <p class="new">65.00 DT</p>
-          <button onclick="removed('div27')">Remove</button>
-        </section>
-        <section id="div28" class="product">
-          <img
-            src="cafetiere-blackdecker-dcm25-b5.jpg"
-            alt="Product 4"
-          />
-          <h2>CAFETIÈRE BLACK&DECKER DCM25-B5</h2>
-          <p>
-              <ul>
-              <li>Puissance 330 Watts</li>
-              <li>Capacité: 180ml</li>
-              <li>Filtre permanent</li>
-              
-          </ul></p>
-          <p class="new">59.00 DT</p>
-          <button onclick="removed('div28')">Remove</button>
-        </section>
-      </index>
+
+
+</section>
+      <!-- Add more product sections here -->
+      <section id="div9" class="product">
+        <img
+          src="smartphone-samsung-galaxy-a55-8256g-5g-violet (1).jpg"
+          alt="Product 1"
+        />
+        <h2>SMARTPHONE SAMSUNG GALAXY A55 8/256G 5G / VIOLET</h2>
+        <p>
+            <ul>
+            <li>Ecran 6.6" Super AMOLED, Full HD+ 1080 x 2340 pixels - 120 Hz</li>
+            <li>Processeur Octa-Core Exynos 1480</li>
+            <li> RAM 8 Go</li>
+            <li>Mémoire 256 Go</li>
+            <li> Batterie 5000 mAh</li>
+            <li>Résolution Enregistrement Vidéo : UHD 4K</li>
+            <li>Garantie 1 an</li>
+            <li>Couleur : Violet</li>
+        </ul></p>
+        <p class="new">1999.000 DT</p>
+        <button onclick="removed('div9')">Remove</button>
+      </section>
+    <section id="div10" class="product">
+        <img
+          src="smartphone-xiaomi-redmi-note-13-pro-8go-256go-purple.jpg"
+          alt="Product 2"
+        />
+        <h2>Smartphone XIAOMI Redmi Note 13 PRO + 5G/ 12GO /512GO /WHITE</h2>
+        <p>
+            <ul>
+            <li> Écran 6.67", AMOLED 1.5K, 1220 x 2712 pixels</li>
+            <li>Processeur Octa-Core Exynos 1480</li>
+            <li> RAM 8 Go</li>
+            <li>Mémoire 256 Go</li>
+            <li>Taux de rafraîchissement 120Hz</li>
+            <li> Batterie 5100 mAh Type-C</li>
+            <li>Charge Rapide 120W</li>
+            <li>Garantie 1 an</li>
+            <li> Couleur: Blanc</li>
+        </ul></p>
+        <p class="new">1599.000 DT</p>
+        <button onclick="removed('div10')">Remove</button>
+      </section>
+    <section id="div11" class="product">
+        <img
+          src="smartphone-samsung-galaxy-a55-8256g-5g-noir-.jpg"
+          alt="Product 3"
+        />
+        <h2>SMARTPHONE SAMSUNG GALAXY A55 8/256G 5G / JAUNE</h2>
+        <p>
+            <ul>
+            <li>Ecran 6.6" Super AMOLED, Full HD+ 1080 x 2340 pixels</li>
+            <li>Processeur Octa-Core Exynos 1480</li>
+            <li> RAM 8 Go</li>
+            <li>Mémoire 256 Go</li>
+            <li>Appareil Photo 50 MP + 12 MP  + 5 MP</li>
+            <li> Batterie 5100 mAh Type-C</li>
+            <li>Charge Rapide 120W</li>
+            <li>Garantie 1 an</li>
+            <li>Couleur : Jaune</li>
+        </ul></p>
+        <p class="new">1599.000 DT</p>
+        <button onclick="removed('div11')">Remove</button>
+      </section>
+      <section id="div12" class="product">
+        <img
+          src="telephone-portable-apple-iphone-11-64-go-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>TÉLÉPHONE PORTABLE APPLE IPHONE 11 / 64 GO / NOIR</h2>
+        <p>
+            <ul>
+            <li>cran 6.1" Liquid Retina HD IPS (828 x 1792px)</li>
+            <li>Processeur Apple A13 Bionic Hexa-Core</li>
+            <li>RAM 4 Go</li>
+            <li>Mémoire 64 Go</li>
+            <li> Batterie 3110 mAh</li>
+            <li>Résolution Enregistrement Vidéo : UHD 4K</li>
+            <li>Garantie 1 an</li>
+            <li>Couleur : Noire</li>
+        </ul></p>
+        <p class="new">1999.000 DT</p>
+        <button onclick="removed('div12')">Remove</button>
+      </section>
+      <section id="div13" class="product">
+        <img
+          src="pc-portable-lenovo-ideapad-gaming-3-15ach6-amd-ryzen-5-16go-rtx-2050-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>PC PORTABLE LENOVO IDEAPAD GAMING 3 15ACH6 AMD RYZEN 5 / 16GO / RTX 2050 / NOIR</h2>
+        <p>
+            <ul>
+            <li>Écran 15.6" Full HD IPS, 144Hz</li>
+            <li>Processeur : AMD Ryzen™ 5 5500H</li>
+            <li>Mémoire RAM : 16Go</li>
+            <li>Carte Graphique : NVIDIA GeForce RTX 2050</li>
+            
+            <li>Garantie 2 an</li>
+            <li>Couleur : Noir</li>
+        </ul></p>
+        <p class="new">2099.000 DT</p>
+        <button onclick="removed('div13')">Remove</button>
+      </section>
+      <section id="div14" class="product">
+        <img
+          src="pc-portable-lenovo-loq-15irh8-i5-12450h-rtx-2050-4g-8-go-gris-avec-souris-rvb-lenovo-loq-m100.jpg"
+          alt="Product 4"
+        />
+        <h2>PC PORTABLE LENOVO LOQ 15IRH8 / I5-12450H / RTX 2050 4G / 8 GO </h2>
+        <p>
+            <ul>
+            <li>Écran 15.6" FHD (1920 x 1080) IPS antireflet 144 Hz</li>
+            <li>Processeur Intel Core i5-12450H</li>
+            <li>Disque SSD 512 Go M.2 2242 PCIe NVMe</li>
+            <li>Carte Graphiques NVIDIA GeForce RTX 2050</li>
+            
+            <li>Garantie 2 an</li>
+            <li>Couleur : Noir</li>
+        </ul></p>
+        <p class="new">2149.000 DT</p>
+        <button onclick="removed('div14')">Remove</button>
+      </section>
+      <section id="div15" class="product">
+        <img
+          src="pc-portable-asus-tuf-gaming-a15-fa506nf-ryzen-5-7535hs-rtx-2050-4g-8-go-windows-11-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>PC PORTABLE ASUS TUF GAMING A15 FA506NF / RYZEN 5 7535HS / RTX 2050 4G / 8 GO / WINDOWS 11 / NOIR</h2>
+        <p>
+            <ul>
+            <li>Écran 15.6" Full HD (1920 x 1080), antireflet</li>
+            <li>Taux de rafraîchissement: 144 Hz</li>
+            <li>Processeur AMD Ryzen 5 7535HS</li>
+            <li>Mémoire 8 Go DDR5</li>
+            <li>Garantie 2 an</li>
+            <li>Couleur : Noir</li>
+        </ul></p>
+        <p class="new">2149.000 DT</p>
+        <button onclick="removed('div15')">Remove</button>
+      </section>
+      <section id="div16" class="product">
+        <img
+          src="pc-portable-gamer-asus-vivobook-16x-s3605zf-i5-12500h-rtx-2050-4g-8-go-512-go-windows-11-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>PC PORTABLE GAMER ASUS VIVOBOOK 16X S3605ZF / I5-12500H / RTX 2050 4G / 8 GO / 512 GO / WINDOWS 11</h2>
+        <p>
+            <ul>
+            <li>Écran 16" WUXGA (1920 x 1 200)</li>
+            <li>Taux de rafraîchissement 120 Hz</li>
+            <li>Processeur IntelCore i5-12500H 12e génération</li>
+            <li>Mémoire 8 Go DDR4</li>
+            <li>Garantie 2 an</li>
+            <li>Couleur : Noir</li>
+        </ul></p>
+        <p class="new">2199.000 DT</p>
+        <button onclick="removed('div16')">Remove</button>
+      </section>
+      <section id="div17" class="product">
+        <img
+          src="refroidisseur-usb-sbox-cp-101.jpg"
+          alt="Product 4"
+        />
+        <h2>REFROIDISSEUR USB SBOX CP-101</h2>
+        <p>
+            <ul>
+            <li>Pour Pc portable 15.6"</li>
+            <li>Ventilateur: 2 x 140 mm (LED bleue)</li>
+            <li>Vitesse du ventilateur: 800</li>
+        </ul></p>
+        <p class="new">44.000 DT</p>
+        <button onclick="removed('div17')">Remove</button>
+      </section>
+      <section id="div18" class="product">
+        <img
+          src="clavier-gaming-xtrike-kb-280-rgb-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>CLAVIER GAMING XTRIKE ME KB-280 / RGB / NOIR</h2>
+        <p>
+            <ul>
+            <li>Clavier Gaming Xtrike Me KB-280</li>
+            <li>Type d'interface USB </li>
+            <li>Connectivité filaire USB </li>
+        </ul></p>
+        <p class="new">20.000 DT</p>
+        <button onclick="removed('div18')">Remove</button>
+      </section>
+      <section id="div19" class="product">
+        <img
+          src="tapis-de-souris-havit-mp838.jpg"
+          alt="Product 4"
+        />
+        <h2>TAPIS DE SOURIS HAVIT MP838</h2>
+        <p>
+            <ul>
+            <li>Tapis de souris Havit MP838</li>
+            <li>Surface en tissu à mailles fines</li>
+            <li>base en caoutchouc antidérapante</li>
+        </ul></p>
+        <p class="new">5.000 DT</p>
+        <button onclick="removed('div19')">Remove</button>
+      </section>
+      
+      <section id="div20" class="product">
+        <img
+          src="souris-usb-jedel-m66.jpg"
+          alt="Product 4"
+        />
+        <h2>SOURIS USB JEDEL M66</h2>
+        <p>
+            <ul>
+            <li>Souris USB JeDel M66</li>
+            <li>Interface USB</li>
+            <li>Rétroéclairage LED 7 Couleurs</li>
+        </ul></p>
+        <p class="new">6.000 DT</p>
+        <button onclick="removed('div20')">Remove</button>
+      </section>
+      <section id="div21" class="product">
+        <img
+          src="haylou-smartwatch-2-pro_10-860x860.jpeg"
+          alt="Product 4"
+        />
+        <h2>Montre Connectée Haylou Watch 2 Pro</h2>
+        <p>
+            <ul>
+            <li> Bluetooth Call</li>
+            <li> Des fonctionnalités avancées à votre poignet</li>
+            <li>Camera Photos</li>
+        </ul></p>
+        <p class="new">139.00 DT</p>
+        <button onclick="removed('div21')">Remove</button>
+      </section>
+      <section id="div22" class="product">
+        <img
+          src="montre.jpg"
+          alt="Product 4"
+        />
+        <h2>Montre Connectée Mibro T1</h2>
+        <p>
+            <ul>
+            <li>une montre intelligente</li>
+            <li>un style de vie actif</li>
+            <li>suivi de santé</li>
+        </ul></p>
+        <p class="new">139.00 DT</p>
+        <button onclick="removed('div22')">Remove</button>
+      </section>
+      
+      <section id="div23" class="product">
+        <img
+          src="87577458_9761841878.jpeg"
+          alt="Product 4"
+        />
+        <h2>Montre Connectée Amazfit Bip 3 pro</h2>
+        <p>
+            <ul>
+            <li>un écran tactile TFT de 1,69 pouce</li>
+            <li>résolution de 240×280 pixels</li>
+            <li>offre une connectivité Bluetooth 5.0</li>
+        </ul></p>
+        <p class="new">299.00 DT</p>
+        <button onclick="removed('div23')">Remove</button>
+      </section>
+      <section id="div24" class="product">
+        <img
+          src="bison-x10-black2_62_1.jpg"
+          alt="Product 4"
+        />
+        <h2>Montre Connectée Mibro X1</h2>
+        <p>
+            <ul>
+            <li>votre partenaire santé et fitness au quotidien</li>
+            <li> Suivez vos activités</li>
+            <li>améliorez votre bien-être</li>
+        </ul></p>
+        <p class="new">189.00 DT</p>
+        <button onclick="removed('div24')">Remove</button>
+      </section>
+      <section id="div25" class="product">
+        <img
+          src="four-electrique-focus-f35r-35-l-rouge.jpg"
+          alt="Product 4"
+        />
+        <h2>FOUR ÉLECTRIQUE FOCUS F35G 35 L / GRIS</h2>
+        <p>
+            <ul>
+            <li>Puissance: 1800 Watts</li>
+            <li>Volume: 35 Litres</li>
+            <li>Température: Réglable jusqu'à 250°C</li>
+        </ul></p>
+        <p class="new">159.00 DT</p>
+        <button onclick="removed('div25')">Remove</button>
+      </section>
+      <section id="div26" class="product">
+        <img
+          src="mixeur-plongeant-tristar-mx-4800-250w-blanc.jpg"
+          alt="Product 4"
+        />
+        <h2>MIXEUR PLONGEANT TRISTAR MX-4800 / 250W / BLANC</h2>
+        <p>
+            <ul>
+            <li>Puissance 250W</li>
+            <li>2x vitesses</li>
+            <li>2x lames</li>
+            <li>Matériau du pied Synthétique</li>
+        </ul></p>
+        <p class="new">59.00 DT</p>
+        <button onclick="removed('div26')">Remove</button>
+      </section>
+      <section id="div27" class="product">
+        <img
+          src="presse-agrumes-techwood-tpf-36-20w-noir.jpg"
+          alt="Product 4"
+        />
+        <h2>PRESSE AGRUMES TECHWOOD TPF-36 / 20W / NOIR</h2>
+        <p>
+            <ul>
+            <li>Démarrage automatique par pression sur le cône</li>
+            <li>Double sens de rotation</li>
+            <li>Bol verseur translucide gradué</li>
+            
+        </ul></p>
+        <p class="new">65.00 DT</p>
+        <button onclick="removed('div27')">Remove</button>
+      </section>
+      <section id="div28" class="product">
+        <img
+          src="cafetiere-blackdecker-dcm25-b5.jpg"
+          alt="Product 4"
+        />
+        <h2>CAFETIÈRE BLACK&DECKER DCM25-B5</h2>
+        <p>
+            <ul>
+            <li>Puissance 330 Watts</li>
+            <li>Capacité: 180ml</li>
+            <li>Filtre permanent</li>
+            
+        </ul></p>
+        <p class="new">59.00 DT</p>
+        <button onclick="removed('div28')">Remove</button>
+      </section>
+    </index>
       <div id="sum">Total: <span id="price"></span> DT</div>
       <h3 id="p">Your Shopping Cart is empty </h3>
       
       <button onclick="gotoform()" id="buy" class="buy-button">Buy</button>
       
       <script>
-        function gotoform(){
-          window.location.href = "form.html";
-        }
-      
-        function removed(div) {
-          var element = document.getElementById(div);
-          if (element) {
-            element.style.display = "none";
-      
-            var shoppingString = sessionStorage.getItem('myArray');
-            if (shoppingString){
-                var shoppingList = JSON.parse(shoppingString);
-            }
-      
-            var index = shoppingList.indexOf(div);
-            
-            shoppingList.splice(index, 1);
+        window.onload = function() {
+  var shoppingString = sessionStorage.getItem('myArray');
+  
+  // Hide elements by default
+  var buyElement = document.getElementById('buy');
+  var sumElement = document.getElementById('sum');
+  var emptyCartMessage = document.getElementById('p');
+  
+  if (buyElement) buyElement.style.display = 'none';
+  if (sumElement) sumElement.style.display = 'none';
+  if (emptyCartMessage) emptyCartMessage.style.display = 'block';
 
-            // Get price of removed item
-            var priceElement = element.querySelector("p.new");
-            var priceText = priceElement.textContent;
-            var itemPrice = parseFloat(priceText);
-            
-            // Update total price
-            const sumElement = document.getElementById("sum");
-            var totalElement = sumElement.querySelector("span");
-            var currentTotal = parseFloat(totalElement.textContent);
-            var newTotal = currentTotal - itemPrice;
-            
-            // Update display
-            totalElement.textContent = newTotal.toFixed(2);
-            
-            // Update session storage
-            sessionStorage.setItem('prix', newTotal.toString());
-            
-            // Show/hide elements based on cart status
-            if (shoppingList.length > 0) {
-              document.getElementById('buy').style.display = 'block';
-              document.getElementById('sum').style.display = 'block';
-              document.getElementById('p').style.display = 'none';
-            } else {
-              document.getElementById('buy').style.display = 'none';
-              document.getElementById('sum').style.display = 'none';
-              document.getElementById('p').style.display = 'block';
+  if (shoppingString) {
+    var shoppingList = JSON.parse(shoppingString);
+    var totalPrice = 0;
+
+    // Only proceed if there are items in the shopping list
+    if (shoppingList && shoppingList.length > 0) {
+      for (let i = 0; i < shoppingList.length; i++) {
+        const element = document.getElementById(shoppingList[i]);
+
+        if (element) {
+          element.style.display = 'flex'; // Display the items
+
+          // Calculate total price directly from the product's price
+          const priceElement = element.querySelector(".new");
+          if (priceElement) {
+            const priceText = priceElement.textContent.replace(' DT', '').trim();
+            const price = parseFloat(priceText);
+            if (!isNaN(price)) {
+              totalPrice += price;
             }
-            
-            // Update shopping list in session storage
-            sessionStorage.setItem('myArray', JSON.stringify(shoppingList));
           }
         }
+      }
+
+      // Update total price display
+      const priceElement = sumElement.querySelector("#price");
+      if (priceElement) {
+        priceElement.textContent = totalPrice.toFixed(2);
+        sessionStorage.setItem('prix', totalPrice.toString());
+      }
+
+      // Show relevant elements
+      if (buyElement) buyElement.style.display = 'block';
+      if (sumElement) sumElement.style.display = 'block';
+      if (emptyCartMessage) emptyCartMessage.style.display = 'none';
+    }
+  }
+};
+
+function gotoform(){
+  window.location.href = "form.html";
+}
+
+function removed(div) {
+  var element = document.getElementById(div);
+  if (element) {
+    // Remove the item from display
+    element.style.display = "none";
+
+    // Get shopping list from session storage
+    var shoppingString = sessionStorage.getItem('myArray');
+    var shoppingList = shoppingString ? JSON.parse(shoppingString) : [];
+
+    // Remove the div from shopping list
+    var index = shoppingList.indexOf(div);
+    if (index > -1) {
+      shoppingList.splice(index, 1);
+    }
+
+    // Calculate new total price
+    var totalPrice = 0;
+    for (let i = 0; i < shoppingList.length; i++) {
+      const remainingElement = document.getElementById(shoppingList[i]);
+      if (remainingElement) {
+        const priceElement = remainingElement.querySelector(".new");
+        if (priceElement) {
+          const priceText = priceElement.textContent.replace(' DT', '').trim();
+          const price = parseFloat(priceText);
+          if (!isNaN(price)) {
+            totalPrice += price;
+          }
+        }
+      }
+    }
+
+    // Update total price display
+    const sumElement = document.getElementById("sum");
+    const priceElement = sumElement.querySelector("#price");
+    if (priceElement) {
+      priceElement.textContent = totalPrice.toFixed(2);
+      sessionStorage.setItem('prix', totalPrice.toString());
+    }
+
+    // Update shopping list in session storage
+    sessionStorage.setItem('myArray', JSON.stringify(shoppingList));
+
+    // Show/hide elements based on cart status
+    if (shoppingList.length > 0) {
+      document.getElementById('buy').style.display = 'block';
+      document.getElementById('sum').style.display = 'block';
+      document.getElementById('p').style.display = 'none';
+    } else {
+      document.getElementById('buy').style.display = 'none';
+      document.getElementById('sum').style.display = 'none';
+      document.getElementById('p').style.display = 'block';
+    }
+  }
+}
+
+// Mobile menu toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenuToggle.addEventListener('click', function() {
+  navMenu.classList.toggle('active');
+  this.classList.toggle('active');
+});
+
+// Submenu toggle for mobile
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+submenuToggles.forEach(toggle => {
+  toggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const parentLi = this.parentElement;
+    parentLi.classList.toggle('submenu-active');
+  });
+});
       </script>
     <footer>
       <div class="french-line">
@@ -676,7 +763,7 @@ window.onload = function() {
           <h3>Contact us</h3>
           <ul>
             <li>Phone: (+216)23344750</li>
-            <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a> </li>
+            <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
             <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
             <li>Opening Hours: 8:00AM</li>
             <li>Closing Hours: 18:00PM</li>
@@ -687,6 +774,5 @@ window.onload = function() {
     <hr style="color: aliceblue;"/>
     <p class="copyright">&copy; 2024 Commercial Electronics Store</p></div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
-

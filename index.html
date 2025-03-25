@@ -15,14 +15,18 @@
     </header>
     
     <nav>
-      <ul>
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
         <li>
           <i class="fa-solid fa-house"></i>
           <a href="index.html">Home</a>
         </li>
-        <li>
+        <li class="has-submenu">
           <i class="fa-solid fa-store"></i>
-          <a class="has-submenu" href="product.html">Products</a>
+          <a href="product.html">Products</a>
+          <span class="submenu-toggle"><i class="fa-solid fa-chevron-down"></i></span>
           <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
@@ -219,7 +223,7 @@
         <h3>Contact us</h3>
         <ul>
           <li class="l">Phone: (+216)23344750</li>
-          <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
+          <li class="l">Email: <a href="/cdn-cgi/l/email-protection#dab0b7bbb6b7b5b2bbb7bfbebbb7b3b4bfeb9abdb7bbb3b6f4b9b5b7"><span class="__cf_email__" data-cfemail="650f080409080a0d0408000104080c0b0054250208040c094b060a08">[email&#160;protected]</span></a></li>
           <li class="l">Location: Mega Market Tunisie Bouzayen: Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax. GSM: 29 937 501</li>
           <li class="l">Opening Hours: 8:00AM</li>
           <li class="l">Closing Hours: 18:00PM</li>
@@ -232,7 +236,7 @@
       </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
       const imageContainer = document.getElementById("image-container");
       const images = imageContainer.querySelectorAll("img");
       let currentImageIndex = 0;
@@ -279,6 +283,27 @@
           document.getElementById("cart-indicator").classList.remove("active");
         }, 3000);
       }
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+
+      // Submenu toggle for mobile
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
+      
+      submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const parentLi = this.parentElement;
+          parentLi.classList.toggle('submenu-active');
+        });
+      });
     </script>
   </body>
 </html>

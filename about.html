@@ -23,14 +23,18 @@
     </header>
     
     <nav>
-      <ul>
+      <div class="mobile-menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
         <li>
           <i class="fa-solid fa-house"></i>
           <a href="index.html">Home</a>
         </li>
-        <li>
+        <li class="has-submenu">
           <i class="fa-solid fa-store"></i>
-          <a class="has-submenu" href="product.html">Products</a>
+          <a href="product.html">Products</a>
+          <span class="submenu-toggle"><i class="fa-solid fa-chevron-down"></i></span>
           <ul class="submenu">
             <li><a href="product.html#phone">Phones</a></li>
             <li><a href="product.html#pc">Computers</a></li>
@@ -166,5 +170,28 @@
         <br />
       </div>
     </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+
+      // Submenu toggle for mobile
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
+      
+      submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const parentLi = this.parentElement;
+          parentLi.classList.toggle('submenu-active');
+        });
+      });
+    </script>
   </body>
 </html>

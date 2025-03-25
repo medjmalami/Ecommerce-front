@@ -44,7 +44,7 @@ header h1 {
   font-size: 40px;
 }
 
-/* Navbar Fixes */
+/* Navbar Styles */
 nav {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -59,6 +59,20 @@ nav {
   top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: right;
+}
+
+.mobile-menu-toggle.active i {
+  color: rgb(50, 142, 246);
 }
 
 nav ul {
@@ -90,7 +104,20 @@ nav ul li a {
   display: inline-block;
 }
 
-/* Submenu Fixes */
+nav ul li i {
+  margin-right: 8px;
+  color: aliceblue;
+}
+
+/* Submenu toggle for mobile */
+.submenu-toggle {
+  display: none;
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Submenu Styles */
 nav ul li ul.submenu {
   position: absolute;
   top: 100%;
@@ -184,7 +211,7 @@ p {
   font-size: medium;
 }
 
-/* Footer Fixes */
+/* Footer Styles */
 footer {
   background-color: #333;
   color: #fff;
@@ -237,26 +264,6 @@ footer .copyright {
   border-top: 1px solid #555;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin: 5px 0;
-    width: 100%;
-  }
-
-  nav ul li ul.submenu {
-    position: static;
-    width: 100%;
-  }
-
-  footer div {
-    width: 100%;
-  }
-}
 /* Update the header and header-logo styles to match the other pages */
 header {
   background: rgb(0, 0, 0);
@@ -306,4 +313,132 @@ footer .logo {
   border-radius: 50px 20px;
   margin-bottom: 15px;
   /* Remove any inline styles */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  /* Hide navigation menu by default on mobile */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Show navigation menu when active */
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  /* Adjust list items for mobile */
+  nav ul li {
+    margin: 5px 0;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Remove border radius on hover for mobile */
+  nav ul li:hover {
+    border-radius: 0;
+  }
+  
+  /* Show submenu toggle on mobile */
+  .submenu-toggle {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+  }
+  
+  /* Adjust submenu for mobile */
+  nav ul li ul.submenu {
+    position: static;
+    width: 100%;
+    display: none;
+    margin-top: 10px;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #444;
+  }
+  
+  /* Show submenu when parent is active */
+  nav ul li.submenu-active ul.submenu {
+    display: flex;
+  }
+  
+  /* Override hover behavior for submenu on mobile */
+  nav ul li:hover ul.submenu {
+    display: none;
+  }
+  
+  /* Adjust footer for mobile */
+  footer div {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Adjust reasons section for mobile */
+  #reasons {
+    padding: 15px;
+    margin: 15px 10px;
+  }
+  
+  #reasons h3 {
+    font-size: 18px;
+  }
+  
+  #reasons p {
+    font-size: 14px;
+  }
+  
+  body > h2 {
+    font-size: 24px;
+    margin: 20px auto;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+    min-height: 80px;
+  }
+  
+  .header-logo {
+    max-width: 100px;
+  }
+  
+  body > h2 {
+    font-size: 20px;
+  }
+  
+  #reasons h3 {
+    font-size: 16px;
+  }
+  
+  #reasons p {
+    font-size: 13px;
+  }
+  
+  .important {
+    font-size: 14px;
+  }
+  
+  footer h3 {
+    font-size: 18px;
+  }
+  
+  footer .l {
+    font-size: 14px;
+  }
 }

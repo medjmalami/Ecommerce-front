@@ -69,6 +69,20 @@ nav {
   z-index: 1000;
 }
 
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-align: right;
+}
+
+.mobile-menu-toggle.active i {
+  color: rgb(50, 142, 246);
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -101,6 +115,14 @@ nav ul li a {
 nav ul li i {
   margin-right: 8px;
   color: aliceblue;
+}
+
+/* Submenu toggle for mobile */
+.submenu-toggle {
+  display: none;
+  margin-left: 5px;
+  cursor: pointer;
+  color: white;
 }
 
 /* Submenu styles */
@@ -272,25 +294,142 @@ footer .copyright {
 
 /* Responsive design */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
+  /* Show mobile menu toggle */
+  .mobile-menu-toggle {
+    display: block;
   }
-
+  
+  /* Hide navigation menu by default on mobile */
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  
+  /* Show navigation menu when active */
+  .nav-menu.active {
+    display: flex;
+  }
+  
+  /* Adjust list items for mobile */
   nav ul li {
     margin: 5px 0;
     width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
+  
+  nav ul li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Remove border radius on hover for mobile */
+  nav ul li:hover {
+    border-radius: 0;
+  }
+  
+  /* Show submenu toggle on mobile */
+  .submenu-toggle {
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+  }
+  
+  /* Adjust submenu for mobile */
   nav ul li ul.submenu {
     position: static;
     width: 100%;
+    display: none;
+    margin-top: 10px;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #444;
   }
-
+  
+  /* Show submenu when parent is active */
+  nav ul li.submenu-active ul.submenu {
+    display: flex;
+  }
+  
+  /* Override hover behavior for submenu on mobile */
+  nav ul li:hover ul.submenu {
+    display: none;
+  }
+  
+  /* Adjust footer for mobile */
   footer div {
     width: 100%;
+    text-align: center;
   }
-
+  
+  /* Adjust form for mobile */
   fieldset {
     padding: 15px;
+  }
+  
+  legend {
+    font-size: 20px;
+  }
+  
+  /* Adjust header for mobile */
+  .header-content {
+    flex-direction: column;
+  }
+  
+  header h1 {
+    font-size: 28px;
+    margin: 10px auto;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+    min-height: 80px;
+  }
+  
+  .header-logo {
+    max-width: 100px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+  }
+  
+  fieldset {
+    padding: 10px;
+  }
+  
+  legend {
+    font-size: 18px;
+  }
+  
+  label {
+    font-size: 14px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  input[type="submit"] {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  
+  footer h3 {
+    font-size: 18px;
+  }
+  
+  footer .l {
+    font-size: 14px;
   }
 }
