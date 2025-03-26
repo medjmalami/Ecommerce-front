@@ -74,7 +74,7 @@
         </ul>
         <p class="old">850.000 DT</p>
         <p class="new">599.000 DT</p>
-        <button onclick="showDivOnPage2('div1')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div1')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -92,7 +92,7 @@
         </ul>
         <p class="old">129.000 DT</p>
         <p class="new">105.000 DT</p>
-        <button onclick="showDivOnPage2('div2')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div2')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -114,7 +114,7 @@
         </ul>
         <p class="old">269.000 DT</p>
         <p class="new">195.000 DT</p>
-        <button onclick="showDivOnPage2('div3')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div3')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -129,7 +129,7 @@
         </ul>
         <p class="old">249.000 DT</p>
         <p class="new">199.000 DT</p>
-        <button onclick="showDivOnPage2('div4')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div4')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -148,7 +148,7 @@
         </ul>
         <p class="old">649.000 DT</p>
         <p class="new">579.000 DT</p>
-        <button onclick="showDivOnPage2('div5')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div5')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -167,7 +167,7 @@
         </ul>
         <p class="old">349.000 DT</p>
         <p class="new">305.000 DT</p>
-        <button onclick="showDivOnPage2('div6')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div6')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -184,7 +184,7 @@
         </ul>
         <p class="old">2,299.000 DT</p>
         <p class="new">2,149.000 DT</p>
-        <button onclick="showDivOnPage2('div7')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div7')">Add to Shopping Cart</button>
       </section>
       
       <section class="product">
@@ -199,7 +199,7 @@
         </ul>
         <p class="old">850.000 DT</p>
         <p class="new">599.000 DT</p>
-        <button onclick="showDivOnPage2('div8')">Add to Shopping Cart</button>
+        <button onclick="addToCart('div8')">Add to Shopping Cart</button>
       </section>
     </index>
 
@@ -223,7 +223,7 @@
         <h3>Contact us</h3>
         <ul>
           <li class="l">Phone: (+216)23344750</li>
-          <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
+          <li class="l">Email: <a href="/cdn-cgi/l/email-protection#6c06010d000103040d0109080d010502095d2c0b010d0500420f0301"><span class="__cf_email__" data-cfemail="513b3c303d3c3e39303c3435303c383f346011363c30383d7f323e3c">[email&#160;protected]</span></a></li>
           <li class="l">Location: Mega Market Tunisie Bouzayen: Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax. GSM: 29 937 501</li>
           <li class="l">Opening Hours: 8:00AM</li>
           <li class="l">Closing Hours: 18:00PM</li>
@@ -236,7 +236,7 @@
       </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
       const imageContainer = document.getElementById("image-container");
       const images = imageContainer.querySelectorAll("img");
       let currentImageIndex = 0;
@@ -257,6 +257,13 @@
         rotateImages();
         rotateImages();
         setImagesWidth();
+        
+        // Check if cart has items to show notification
+        const cartItems = getCartItems();
+        if (Object.keys(cartItems).length > 0) {
+          let notif = document.getElementById("notif");
+          notif.style.display = 'inline';
+        }
       }
       
       // Set image width on initial load and window resize
@@ -265,15 +272,38 @@
 
       setInterval(rotateImages, 2000); 
 
+      // Get cart items with quantities
+      function getCartItems() {
+        const cartString = sessionStorage.getItem('cartItems');
+        return cartString ? JSON.parse(cartString) : {};
+      }
+      
+      function saveCartItems(cartItems) {
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }
+      
       // Shopping cart functionality
-      function showDivOnPage2(div) {
+      function addToCart(productId) {
         let notif = document.getElementById("notif");
         notif.style.display = 'inline';
         
-        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
-        myArray.push(div);
-        sessionStorage.setItem('myArray', JSON.stringify(myArray));
+        // Get current cart items
+        const cartItems = getCartItems();
         
+        // Increment quantity or add new item
+        cartItems[productId] = (cartItems[productId] || 0) + 1;
+        
+        // Save updated cart
+        saveCartItems(cartItems);
+        
+        // For backward compatibility, also update the old array format
+        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
+        if (!myArray.includes(productId)) {
+          myArray.push(productId);
+          sessionStorage.setItem('myArray', JSON.stringify(myArray));
+        }
+        
+        // Show notification
         document.getElementById("cart-indicator").textContent = "Your Product Has Been Added";
         document.getElementById("cart-indicator").classList.add("active");
 

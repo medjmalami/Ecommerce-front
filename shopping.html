@@ -10,61 +10,50 @@
         .product{
             display: none;
         }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .quantity-controls button {
+            width: 32px;
+            height: 32px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .quantity-controls button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        .quantity-controls button:active {
+            transform: scale(0.95);
+        }
+        .quantity-controls span {
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            min-width: 30px;
+            text-align: center;
+        }
+        .product-total {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2c3e50;
+        }
+        .item-total {
+            color: #e74c3c;
+        }
     </style>
-    <script>
-window.onload = function() {
-  var shoppingString = sessionStorage.getItem('myArray');
-  
-  // Hide elements by default
-  var buyElement = document.getElementById('buy');
-  var sumElement = document.getElementById('sum');
-  var emptyCartMessage = document.getElementById('p');
-  
-  if (buyElement) buyElement.style.display = 'none';
-  if (sumElement) sumElement.style.display = 'none';
-  if (emptyCartMessage) emptyCartMessage.style.display = 'block';
-
-  if (shoppingString) {
-    var shoppingList = JSON.parse(shoppingString);
-    var prix = 0;
-
-    // Only proceed if there are items in the shopping list
-    if (shoppingList && shoppingList.length > 0) {
-      for (let i = 0; i < shoppingList.length; i++) {
-        const element = document.getElementById(shoppingList[i]);
-
-        if (element) {
-          element.style.display = 'flex'; // Display the items
-
-          const elem = element.querySelector(".new"); // Get the first element with class "new"
-          if (elem) {
-            const priceText = elem.textContent;
-            const price = parseFloat(priceText);
-            if (!isNaN(price)) {
-              prix += price;
-            }
-          }
-        }
-      }
-
-      // Only show total and buy button if there are items
-      if (shoppingList.length > 0) {
-        const priceElement = sumElement.querySelector("#price");
-        
-        if (priceElement) {
-          priceElement.textContent = prix.toString();
-          sessionStorage.setItem('prix', prix.toString());
-        }
-        
-        // Show relevant elements
-        if (buyElement) buyElement.style.display = 'block';
-        if (sumElement) sumElement.style.display = 'block';
-        if (emptyCartMessage) emptyCartMessage.style.display = 'none';
-      }
-    }
-  }
-};
-    </script>
   </head>
   <body>
     <header>
@@ -110,7 +99,6 @@ window.onload = function() {
         />
         <h2>Chaise Gaming Noir / Blanc -4400015083-BK-WH</h2>
         <p>
-
             <ul>
             <li>Chaise pilote Gaming avec dossier haut</li>
             <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
@@ -120,9 +108,15 @@ window.onload = function() {
         </ul></p>
         <p class="old">850.000 DT</p>
         <p class="new">599.000 DT</p>
-        
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div1')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div1')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">599.000</span> DT</p>
         <button onclick="removed('div1')">Remove</button>
       </section>
+      
       <section id="div2" class="product">
         <img
           src="Mixeur-Plongeant-3en1-Tristar-MX-4154-Blanc-bestbuytunisie.prixtunisie.best_-168x168.jpg"
@@ -130,7 +124,6 @@ window.onload = function() {
         />
         <h2>Mixeur Plongeant 3en1 Tristar MX-4154 Blanc</h2>
         <p><ul>
-
             <li>Référence: MX-4154</li>
             <li>Mixeur Tristar 3en1 avec pied en inox</li>
             <li>Puissance: 200 Watts</li>
@@ -142,13 +135,19 @@ window.onload = function() {
         </ul></p>
         <p class="old">129.000 DT</p>
         <p class="new">105.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div2')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div2')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">105.000</span> DT</p>
         <button onclick="removed('div2')">Remove</button>
       </section>
+      
       <section id="div3" class="product">
         <img src="Montre-Connecte-Colmi-C61-Noir-3.webp" alt="Product 3" />
         <h2>Montre Connecté Colmi C61 – Noir</h2>
         <p>
-
             <ul>
                 <li>Écran : 1.9″ IPS Tactile 240 x 280 px</li>
                 <li>Bluetooth 5.1</li>
@@ -163,8 +162,15 @@ window.onload = function() {
         <li> Garantie: 1 an</li></ul></p>
         <p class="old">269.000 DT</p>
         <p class="new">195.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div3')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div3')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">195.000</span> DT</p>
         <button onclick="removed('div3')">Remove</button>
       </section>
+      
       <section id="div4" class="product">
         <img
           src="Machine-A-Cafe-Espresso-Caffitaly-System-Luna-S32-R-Noir-bestbuytunisie.prixtunisie.best_-168x168.jpg"
@@ -186,84 +192,105 @@ window.onload = function() {
         </p>
         <p class="old">249.000 DT</p>
         <p class="new">199.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div4')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div4')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">199.000</span> DT</p>
         <button onclick="removed('div4')">Remove</button>
       </section>
     
-    <section id="div5" class="product">
-      <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp.jpg" alt="Product 5" />
-      <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
+      <section id="div5" class="product">
+        <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp.jpg" alt="Product 5" />
+        <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
+          <p><ul><li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
+          <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
+          <li>Système d'exploitation: Android 11</li>
+          <li>Mémoire RAM: 4Go</li>
+          <li>Stockage: 64Go</li>
+          <li> Batterie: 5000mAh</li>
+          <li>Appareil Photo Frontale : 8.0MP f/2.0</li>
+          <li>Appareil Photo Arrière: Double 13.0 MP f/2.2, (large), PDAF + 2.0 MP f/2.4, (profondeur)</li>
+          <li>Garantie: 1 an</li></ul></p>
+        <p class="old">649.000 DT</p>
+        <p class="new">579.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div5')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div5')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">579.000</span> DT</p>
+        <button onclick="removed('div5')">Remove</button>
+      </section>
 
-        <p><ul><li>Écran: 6.51″ LCD IPS (720x 1600Pixels)</li>
-        <li>Processeur: Mediatek MT6765 Helio P35 (12nm) Octa-core (4×2,35 GHz Cortex-A53 et 4×1,8 GHz Cortex-A53)</li>
-        <li>Système d'exploitation: Android 11</li>
-        <li>Mémoire RAM: 4Go</li>
-        <li>Stockage: 64Go</li>
-        <li> Batterie: 5000mAh</li>
-        <li>Appareil Photo Frontale : 8.0MP f/2.0</li>
-        <li>Appareil Photo Arrière: Double 13.0 MP f/2.2, (large), PDAF + 2.0 MP f/2.4, (profondeur)</li>
-        <li>Garantie: 1 an</li></ul></p>
-      <p class="old">649.000 DT</p>
-      <p class="new">579.000 DT</p>
-      <button onclick="removed('div5')">Remove</button>
-    </section>
+      <section id="div6" class="product">
+        <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
+        <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
+          <p><ul>
+              <li>Écran Gaming COOLER MASTER GA241</li>
+              <li>FLAT</li>
+              <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
+              <li>Résolution: 1920 x 1080 pixel</li>
+              <li>Format d'écran: 16:9</li>
+              <li>Luminosité: 250 cd/m²</li>
+              <li>Temps de réponse: 1 ms (MPRT)</li>
+              <li>Couleur: Noir</li>
+              <li>Garantie: 1 an</li>
+          </ul></p>
+        <p class="old">349.000 DT</p>
+        <p class="new">305.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div6')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div6')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">305.000</span> DT</p>
+        <button onclick="removed('div6')">Remove</button>
+      </section>
 
-<section id="div6" class="product">
-  <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
-  <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
-    <p><ul>
-         
+      <section id="div7" class="product">
+        <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
+        <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
+          <p><ul>
+              <li>Écran:15.6″ FULL HD ips</li>
+          <li>Processeur:I5-12450H</li>
+          <li>Système d'exploitation: Windows 11 Famille</li>
+          <li>Mémoire RAM:8Go DDR5-4800</li>
+          <li>Disque Dur:512Go SSD</li>
+          <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
+          <li>Garantie: 2 ans
+              + Souris RVB Lenovo LOQ M100</li></ul></p>
+        <p class="old">2,299.000 DT</p>
+        <p class="new">2,149.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div7')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div7')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">2149.000</span> DT</p>
+        <button onclick="removed('div7')">Remove</button>
+      </section>
 
-        <li>Écran Gaming COOLER MASTER GA241</li>
-        <li>FLAT</li>
-        <li>Taille de l'écran: 23.8 Full HD, 100 Hz</li>
-        <li>Résolution: 1920 x 1080 pixel</li>
-        <li>Format d'écran: 16:9</li>
-        <li>Luminosité: 250 cd/m²</li>
-        <li>Temps de réponse: 1 ms (MPRT)</li>
-        <li>Couleur: Noir</li>
-        <li>Garantie: 1 an</li>
-    </ul></p>
-  <p class="old">349.000 DT</p>
-  <p class="new">305.000 DT</p>
-  <button onclick="removed('div6')">Remove</button>
-</section>
-
-<section id="div7" class="product">
-  <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
-  <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
-    <p><ul>
-        
-        <li>Écran:15.6″ FULL HD ips</li>
-    <li>Processeur:I5-12450H</li>
-    <li>Système d'exploitation: Windows 11 Famille</li>
-    <li>Mémoire RAM:8Go DDR5-4800</li>
-    <li>Disque Dur:512Go SSD</li>
-    <li>Carte Graphique: NVIDIA GeForce RTX 2050(6Go de mémoire dédiée GDDR6)</li>
-    <li>Garantie: 2 ans
-        + Souris RVB Lenovo LOQ M100</li></ul></p>
-  <p class="old">2,299.000 DT</p>
-  <p class="new">2,149.000 DT</p>
-  <button onclick="removed('div7')">Remove</button>
-</section>
-
-<section id="div8" class="product">
-  <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
-  <h2>Chaise Gaming Vert / Noire</h2>
-
-    <p><ul><li>Chaise pilote Gaming avec dossier haut</li>
-    <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
-    <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
-    <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
-    <li>Couleur : Vert & Noir</li></ul></p>
-  <p class="old">850.000 DT</p>
-  <p class="new">599.000 DT</p>
-  <button onclick="removed('div8')">Remove</button>
-  
-  
-
-
-</section>
-      <!-- Add more product sections here -->
+      <section id="div8" class="product">
+        <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
+        <h2>Chaise Gaming Vert / Noire</h2>
+          <p><ul><li>Chaise pilote Gaming avec dossier haut</li>
+          <li>Siège en cuir et avec accoudoirs rembourrés excellent confort</li>
+          <li>Chaise de Pilote est plus large que les chaises de bureau de bureau moyennes hauteur réglable</li>
+          <li>La conception de la chaise de bureau est idéale pour le dossier confortable et durable</li>
+          <li>Couleur : Vert & Noir</li></ul></p>
+        <p class="old">850.000 DT</p>
+        <p class="new">599.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div8')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div8')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">599.000</span> DT</p>
+        <button onclick="removed('div8')">Remove</button>
+      </section>
+      
       <section id="div9" class="product">
         <img
           src="smartphone-samsung-galaxy-a55-8256g-5g-violet (1).jpg"
@@ -282,9 +309,16 @@ window.onload = function() {
             <li>Couleur : Violet</li>
         </ul></p>
         <p class="new">1999.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div9')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div9')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">1999.000</span> DT</p>
         <button onclick="removed('div9')">Remove</button>
       </section>
-    <section id="div10" class="product">
+      
+      <section id="div10" class="product">
         <img
           src="smartphone-xiaomi-redmi-note-13-pro-8go-256go-purple.jpg"
           alt="Product 2"
@@ -303,9 +337,16 @@ window.onload = function() {
             <li> Couleur: Blanc</li>
         </ul></p>
         <p class="new">1599.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div10')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div10')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">1599.000</span> DT</p>
         <button onclick="removed('div10')">Remove</button>
       </section>
-    <section id="div11" class="product">
+      
+      <section id="div11" class="product">
         <img
           src="smartphone-samsung-galaxy-a55-8256g-5g-noir-.jpg"
           alt="Product 3"
@@ -324,8 +365,15 @@ window.onload = function() {
             <li>Couleur : Jaune</li>
         </ul></p>
         <p class="new">1599.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div11')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div11')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">1599.000</span> DT</p>
         <button onclick="removed('div11')">Remove</button>
       </section>
+      
       <section id="div12" class="product">
         <img
           src="telephone-portable-apple-iphone-11-64-go-noir.jpg"
@@ -334,7 +382,7 @@ window.onload = function() {
         <h2>TÉLÉPHONE PORTABLE APPLE IPHONE 11 / 64 GO / NOIR</h2>
         <p>
             <ul>
-            <li>cran 6.1" Liquid Retina HD IPS (828 x 1792px)</li>
+            <li>Ecran 6.1" Liquid Retina HD IPS (828 x 1792px)</li>
             <li>Processeur Apple A13 Bionic Hexa-Core</li>
             <li>RAM 4 Go</li>
             <li>Mémoire 64 Go</li>
@@ -344,8 +392,15 @@ window.onload = function() {
             <li>Couleur : Noire</li>
         </ul></p>
         <p class="new">1999.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div12')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div12')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">1999.000</span> DT</p>
         <button onclick="removed('div12')">Remove</button>
       </section>
+      
       <section id="div13" class="product">
         <img
           src="pc-portable-lenovo-ideapad-gaming-3-15ach6-amd-ryzen-5-16go-rtx-2050-noir.jpg"
@@ -358,13 +413,19 @@ window.onload = function() {
             <li>Processeur : AMD Ryzen™ 5 5500H</li>
             <li>Mémoire RAM : 16Go</li>
             <li>Carte Graphique : NVIDIA GeForce RTX 2050</li>
-            
             <li>Garantie 2 an</li>
             <li>Couleur : Noir</li>
         </ul></p>
         <p class="new">2099.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div13')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div13')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">2099.000</span> DT</p>
         <button onclick="removed('div13')">Remove</button>
       </section>
+      
       <section id="div14" class="product">
         <img
           src="pc-portable-lenovo-loq-15irh8-i5-12450h-rtx-2050-4g-8-go-gris-avec-souris-rvb-lenovo-loq-m100.jpg"
@@ -377,13 +438,19 @@ window.onload = function() {
             <li>Processeur Intel Core i5-12450H</li>
             <li>Disque SSD 512 Go M.2 2242 PCIe NVMe</li>
             <li>Carte Graphiques NVIDIA GeForce RTX 2050</li>
-            
             <li>Garantie 2 an</li>
             <li>Couleur : Noir</li>
         </ul></p>
         <p class="new">2149.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div14')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div14')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">2149.000</span> DT</p>
         <button onclick="removed('div14')">Remove</button>
       </section>
+      
       <section id="div15" class="product">
         <img
           src="pc-portable-asus-tuf-gaming-a15-fa506nf-ryzen-5-7535hs-rtx-2050-4g-8-go-windows-11-noir.jpg"
@@ -400,8 +467,15 @@ window.onload = function() {
             <li>Couleur : Noir</li>
         </ul></p>
         <p class="new">2149.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div15')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div15')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">2149.000</span> DT</p>
         <button onclick="removed('div15')">Remove</button>
       </section>
+      
       <section id="div16" class="product">
         <img
           src="pc-portable-gamer-asus-vivobook-16x-s3605zf-i5-12500h-rtx-2050-4g-8-go-512-go-windows-11-noir.jpg"
@@ -418,8 +492,15 @@ window.onload = function() {
             <li>Couleur : Noir</li>
         </ul></p>
         <p class="new">2199.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div16')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div16')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">2199.000</span> DT</p>
         <button onclick="removed('div16')">Remove</button>
       </section>
+      
       <section id="div17" class="product">
         <img
           src="refroidisseur-usb-sbox-cp-101.jpg"
@@ -433,8 +514,15 @@ window.onload = function() {
             <li>Vitesse du ventilateur: 800</li>
         </ul></p>
         <p class="new">44.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div17')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div17')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">44.000</span> DT</p>
         <button onclick="removed('div17')">Remove</button>
       </section>
+      
       <section id="div18" class="product">
         <img
           src="clavier-gaming-xtrike-kb-280-rgb-noir.jpg"
@@ -448,8 +536,15 @@ window.onload = function() {
             <li>Connectivité filaire USB </li>
         </ul></p>
         <p class="new">20.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div18')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div18')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">20.000</span> DT</p>
         <button onclick="removed('div18')">Remove</button>
       </section>
+      
       <section id="div19" class="product">
         <img
           src="tapis-de-souris-havit-mp838.jpg"
@@ -463,6 +558,12 @@ window.onload = function() {
             <li>base en caoutchouc antidérapante</li>
         </ul></p>
         <p class="new">5.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div19')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div19')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">5.000</span> DT</p>
         <button onclick="removed('div19')">Remove</button>
       </section>
       
@@ -479,8 +580,15 @@ window.onload = function() {
             <li>Rétroéclairage LED 7 Couleurs</li>
         </ul></p>
         <p class="new">6.000 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div20')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div20')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">6.000</span> DT</p>
         <button onclick="removed('div20')">Remove</button>
       </section>
+      
       <section id="div21" class="product">
         <img
           src="haylou-smartwatch-2-pro_10-860x860.jpeg"
@@ -494,8 +602,15 @@ window.onload = function() {
             <li>Camera Photos</li>
         </ul></p>
         <p class="new">139.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div21')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div21')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">139.00</span> DT</p>
         <button onclick="removed('div21')">Remove</button>
       </section>
+      
       <section id="div22" class="product">
         <img
           src="montre.jpg"
@@ -509,6 +624,12 @@ window.onload = function() {
             <li>suivi de santé</li>
         </ul></p>
         <p class="new">139.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div22')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div22')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">139.00</span> DT</p>
         <button onclick="removed('div22')">Remove</button>
       </section>
       
@@ -525,8 +646,15 @@ window.onload = function() {
             <li>offre une connectivité Bluetooth 5.0</li>
         </ul></p>
         <p class="new">299.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div23')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div23')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">299.00</span> DT</p>
         <button onclick="removed('div23')">Remove</button>
       </section>
+      
       <section id="div24" class="product">
         <img
           src="bison-x10-black2_62_1.jpg"
@@ -540,8 +668,15 @@ window.onload = function() {
             <li>améliorez votre bien-être</li>
         </ul></p>
         <p class="new">189.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div24')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div24')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">189.00</span> DT</p>
         <button onclick="removed('div24')">Remove</button>
       </section>
+      
       <section id="div25" class="product">
         <img
           src="four-electrique-focus-f35r-35-l-rouge.jpg"
@@ -555,8 +690,15 @@ window.onload = function() {
             <li>Température: Réglable jusqu'à 250°C</li>
         </ul></p>
         <p class="new">159.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div25')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div25')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">159.00</span> DT</p>
         <button onclick="removed('div25')">Remove</button>
       </section>
+      
       <section id="div26" class="product">
         <img
           src="mixeur-plongeant-tristar-mx-4800-250w-blanc.jpg"
@@ -571,8 +713,15 @@ window.onload = function() {
             <li>Matériau du pied Synthétique</li>
         </ul></p>
         <p class="new">59.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div26')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div26')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">59.00</span> DT</p>
         <button onclick="removed('div26')">Remove</button>
       </section>
+      
       <section id="div27" class="product">
         <img
           src="presse-agrumes-techwood-tpf-36-20w-noir.jpg"
@@ -584,11 +733,17 @@ window.onload = function() {
             <li>Démarrage automatique par pression sur le cône</li>
             <li>Double sens de rotation</li>
             <li>Bol verseur translucide gradué</li>
-            
         </ul></p>
         <p class="new">65.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div27')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div27')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">65.00</span> DT</p>
         <button onclick="removed('div27')">Remove</button>
       </section>
+      
       <section id="div28" class="product">
         <img
           src="cafetiere-blackdecker-dcm25-b5.jpg"
@@ -600,150 +755,232 @@ window.onload = function() {
             <li>Puissance 330 Watts</li>
             <li>Capacité: 180ml</li>
             <li>Filtre permanent</li>
-            
         </ul></p>
         <p class="new">59.00 DT</p>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity('div28')">-</button>
+          <span class="quantity">1</span>
+          <button onclick="increaseQuantity('div28')">+</button>
+        </div>
+        <p class="product-total">Total: <span class="item-total">59.00</span> DT</p>
         <button onclick="removed('div28')">Remove</button>
       </section>
     </index>
-      <div id="sum">Total: <span id="price"></span> DT</div>
-      <h3 id="p">Your Shopping Cart is empty </h3>
+    
+    <div id="sum">Total: <span id="price"></span> DT</div>
+    <h3 id="p">Your Shopping Cart is empty </h3>
+    
+    <button onclick="gotoform()" id="buy" class="buy-button">Buy</button>
+    
+    <script>
+      // Store cart items with quantities
+      function getCartItems() {
+        const cartString = sessionStorage.getItem('cartItems');
+        return cartString ? JSON.parse(cartString) : {};
+      }
       
-      <button onclick="gotoform()" id="buy" class="buy-button">Buy</button>
+      function saveCartItems(cartItems) {
+        sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
+      }
       
-      <script>
-        window.onload = function() {
-  var shoppingString = sessionStorage.getItem('myArray');
-  
-  // Hide elements by default
-  var buyElement = document.getElementById('buy');
-  var sumElement = document.getElementById('sum');
-  var emptyCartMessage = document.getElementById('p');
-  
-  if (buyElement) buyElement.style.display = 'none';
-  if (sumElement) sumElement.style.display = 'none';
-  if (emptyCartMessage) emptyCartMessage.style.display = 'block';
-
-  if (shoppingString) {
-    var shoppingList = JSON.parse(shoppingString);
-    var totalPrice = 0;
-
-    // Only proceed if there are items in the shopping list
-    if (shoppingList && shoppingList.length > 0) {
-      for (let i = 0; i < shoppingList.length; i++) {
-        const element = document.getElementById(shoppingList[i]);
-
+      window.onload = function() {
+        // Get cart items with quantities
+        const cartItems = getCartItems();
+        
+        // Hide elements by default
+        var buyElement = document.getElementById('buy');
+        var sumElement = document.getElementById('sum');
+        var emptyCartMessage = document.getElementById('p');
+        
+        if (buyElement) buyElement.style.display = 'none';
+        if (sumElement) sumElement.style.display = 'none';
+        if (emptyCartMessage) emptyCartMessage.style.display = 'block';
+        
+        // Check if cart has items
+        const productIds = Object.keys(cartItems);
+        if (productIds.length > 0) {
+          let totalPrice = 0;
+          
+          // Display each product with its quantity
+          productIds.forEach(productId => {
+            const element = document.getElementById(productId);
+            const quantity = cartItems[productId];
+            
+            if (element) {
+              // Display the product
+              element.style.display = 'flex';
+              
+              // Set quantity
+              const quantityElement = element.querySelector('.quantity');
+              if (quantityElement) {
+                quantityElement.textContent = quantity;
+              }
+              
+              // Calculate item total
+              const priceElement = element.querySelector('.new');
+              if (priceElement) {
+                const priceText = priceElement.textContent.replace(' DT', '').trim();
+                const price = parseFloat(priceText);
+                
+                if (!isNaN(price)) {
+                  const itemTotal = price * quantity;
+                  totalPrice += itemTotal;
+                  
+                  // Update item total display
+                  const itemTotalElement = element.querySelector('.item-total');
+                  if (itemTotalElement) {
+                    itemTotalElement.textContent = itemTotal.toFixed(3);
+                  }
+                }
+              }
+            }
+          });
+          
+          // Update total price display
+          const priceElement = document.getElementById('price');
+          if (priceElement) {
+            priceElement.textContent = totalPrice.toFixed(3);
+            sessionStorage.setItem('prix', totalPrice.toString());
+          }
+          
+          // Show relevant elements
+          if (buyElement) buyElement.style.display = 'block';
+          if (sumElement) sumElement.style.display = 'block';
+          if (emptyCartMessage) emptyCartMessage.style.display = 'none';
+        }
+      };
+      
+      function increaseQuantity(productId) {
+        const cartItems = getCartItems();
+        cartItems[productId] = (cartItems[productId] || 0) + 1;
+        saveCartItems(cartItems);
+        
+        // Update UI
+        updateProductQuantity(productId, cartItems[productId]);
+        updateTotalPrice();
+      }
+      
+      function decreaseQuantity(productId) {
+        const cartItems = getCartItems();
+        if (cartItems[productId] && cartItems[productId] > 1) {
+          cartItems[productId]--;
+          saveCartItems(cartItems);
+          
+          // Update UI
+          updateProductQuantity(productId, cartItems[productId]);
+          updateTotalPrice();
+        } else if (cartItems[productId] === 1) {
+          // If quantity becomes 0, remove the item
+          removed(productId);
+        }
+      }
+      
+      function updateProductQuantity(productId, quantity) {
+        const element = document.getElementById(productId);
         if (element) {
-          element.style.display = 'flex'; // Display the items
-
-          // Calculate total price directly from the product's price
-          const priceElement = element.querySelector(".new");
+          // Update quantity display
+          const quantityElement = element.querySelector('.quantity');
+          if (quantityElement) {
+            quantityElement.textContent = quantity;
+          }
+          
+          // Update item total
+          const priceElement = element.querySelector('.new');
           if (priceElement) {
             const priceText = priceElement.textContent.replace(' DT', '').trim();
             const price = parseFloat(priceText);
+            
             if (!isNaN(price)) {
-              totalPrice += price;
+              const itemTotal = price * quantity;
+              const itemTotalElement = element.querySelector('.item-total');
+              if (itemTotalElement) {
+                itemTotalElement.textContent = itemTotal.toFixed(3);
+              }
             }
           }
         }
       }
-
-      // Update total price display
-      const priceElement = sumElement.querySelector("#price");
-      if (priceElement) {
-        priceElement.textContent = totalPrice.toFixed(2);
-        sessionStorage.setItem('prix', totalPrice.toString());
-      }
-
-      // Show relevant elements
-      if (buyElement) buyElement.style.display = 'block';
-      if (sumElement) sumElement.style.display = 'block';
-      if (emptyCartMessage) emptyCartMessage.style.display = 'none';
-    }
-  }
-};
-
-function gotoform(){
-  window.location.href = "form.html";
-}
-
-function removed(div) {
-  var element = document.getElementById(div);
-  if (element) {
-    // Remove the item from display
-    element.style.display = "none";
-
-    // Get shopping list from session storage
-    var shoppingString = sessionStorage.getItem('myArray');
-    var shoppingList = shoppingString ? JSON.parse(shoppingString) : [];
-
-    // Remove the div from shopping list
-    var index = shoppingList.indexOf(div);
-    if (index > -1) {
-      shoppingList.splice(index, 1);
-    }
-
-    // Calculate new total price
-    var totalPrice = 0;
-    for (let i = 0; i < shoppingList.length; i++) {
-      const remainingElement = document.getElementById(shoppingList[i]);
-      if (remainingElement) {
-        const priceElement = remainingElement.querySelector(".new");
+      
+      function updateTotalPrice() {
+        const cartItems = getCartItems();
+        let totalPrice = 0;
+        
+        Object.keys(cartItems).forEach(productId => {
+          const element = document.getElementById(productId);
+          if (element) {
+            const priceElement = element.querySelector('.new');
+            if (priceElement) {
+              const priceText = priceElement.textContent.replace(' DT', '').trim();
+              const price = parseFloat(priceText);
+              
+              if (!isNaN(price)) {
+                totalPrice += price * cartItems[productId];
+              }
+            }
+          }
+        });
+        
+        // Update total price display
+        const priceElement = document.getElementById('price');
         if (priceElement) {
-          const priceText = priceElement.textContent.replace(' DT', '').trim();
-          const price = parseFloat(priceText);
-          if (!isNaN(price)) {
-            totalPrice += price;
+          priceElement.textContent = totalPrice.toFixed(3);
+          sessionStorage.setItem('prix', totalPrice.toString());
+        }
+      }
+      
+      function removed(productId) {
+        const element = document.getElementById(productId);
+        if (element) {
+          // Remove the item from display
+          element.style.display = "none";
+          
+          // Remove from cart items
+          const cartItems = getCartItems();
+          delete cartItems[productId];
+          saveCartItems(cartItems);
+          
+          // Update total price
+          updateTotalPrice();
+          
+          // Show/hide elements based on cart status
+          const productIds = Object.keys(cartItems);
+          if (productIds.length > 0) {
+            document.getElementById('buy').style.display = 'block';
+            document.getElementById('sum').style.display = 'block';
+            document.getElementById('p').style.display = 'none';
+          } else {
+            document.getElementById('buy').style.display = 'none';
+            document.getElementById('sum').style.display = 'none';
+            document.getElementById('p').style.display = 'block';
           }
         }
       }
-    }
-
-    // Update total price display
-    const sumElement = document.getElementById("sum");
-    const priceElement = sumElement.querySelector("#price");
-    if (priceElement) {
-      priceElement.textContent = totalPrice.toFixed(2);
-      sessionStorage.setItem('prix', totalPrice.toString());
-    }
-
-    // Update shopping list in session storage
-    sessionStorage.setItem('myArray', JSON.stringify(shoppingList));
-
-    // Show/hide elements based on cart status
-    if (shoppingList.length > 0) {
-      document.getElementById('buy').style.display = 'block';
-      document.getElementById('sum').style.display = 'block';
-      document.getElementById('p').style.display = 'none';
-    } else {
-      document.getElementById('buy').style.display = 'none';
-      document.getElementById('sum').style.display = 'none';
-      document.getElementById('p').style.display = 'block';
-    }
-  }
-}
-
-// Mobile menu toggle
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-mobileMenuToggle.addEventListener('click', function() {
-  navMenu.classList.toggle('active');
-  this.classList.toggle('active');
-});
-
-// Submenu toggle for mobile
-const submenuToggles = document.querySelectorAll('.submenu-toggle');
-
-submenuToggles.forEach(toggle => {
-  toggle.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const parentLi = this.parentElement;
-    parentLi.classList.toggle('submenu-active');
-  });
-});
-      </script>
+      
+      function gotoform() {
+        window.location.href = "form.html";
+      }
+      
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      mobileMenuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+      
+      // Submenu toggle for mobile
+      const submenuToggles = document.querySelectorAll('.submenu-toggle');
+      
+      submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const parentLi = this.parentElement;
+          parentLi.classList.toggle('submenu-active');
+        });
+      });
+    </script>
     <footer>
       <div class="french-line">
         <img class="logo" src="logo2.jpg" alt="logo" />
@@ -763,7 +1000,7 @@ submenuToggles.forEach(toggle => {
           <h3>Contact us</h3>
           <ul>
             <li>Phone: (+216)23344750</li>
-            <li class="l">Email: <a href="mailto:jmalmohamedamine1@gmail.com">jmalmohamedamine1@gmail.com</a></li>
+            <li class="l">Email: <a href="/cdn-cgi/l/email-protection#a6cccbc7cacbc9cec7cbc3c2c7cbcfc8c39de6c1cbc7cfca88c5c9cb"><span class="__cf_email__" data-cfemail="f99394989594969198949c9d989490979cc8b99e94989095d79a9694">[email&#160;protected]</span></a></li>
             <li>Location: Mega Market Tunisie Bouzayen:Avenue Mohamed Jmal, Kassas Bouzayen, 3012 Sfax.GSM: 29 937 501</li>
             <li>Opening Hours: 8:00AM</li>
             <li>Closing Hours: 18:00PM</li>
@@ -774,5 +1011,5 @@ submenuToggles.forEach(toggle => {
     <hr style="color: aliceblue;"/>
     <p class="copyright">&copy; 2024 Commercial Electronics Store</p></div>
   </footer>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+  </body>
 </html>
