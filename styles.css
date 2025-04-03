@@ -391,7 +391,7 @@ header {
   .mobile-menu-toggle {
     display: block;
   }
-  
+
   /* Hide navigation menu by default on mobile */
   .nav-menu {
     display: none;
@@ -399,12 +399,12 @@ header {
     width: 100%;
     padding: 0;
   }
-  
+
   /* Show navigation menu when active */
   .nav-menu.active {
     display: flex;
   }
-  
+
   /* Adjust list items for mobile */
   nav ul li {
     margin: 5px 0;
@@ -413,61 +413,61 @@ header {
     padding: 12px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   nav ul li:last-child {
     border-bottom: none;
   }
-  
+
   /* Remove border radius on hover for mobile */
   nav ul li:hover {
     border-radius: 0;
   }
-  
+
   /* Show submenu toggle on mobile */
   .submenu-toggle {
-    display: inline-block;
+    display: none !important;
     position: absolute;
     right: 20px;
   }
-  
+
   /* Adjust submenu for mobile */
   nav ul li ul.submenu {
     position: static;
     width: 100%;
-    display: none;
+    display: none !important;
     margin-top: 10px;
     box-shadow: none;
     border-radius: 0;
     background-color: #444;
   }
-  
+
   /* Show submenu when parent is active */
   nav ul li.submenu-active ul.submenu {
     display: flex;
   }
-  
+
   /* Override hover behavior for submenu on mobile */
   nav ul li:hover ul.submenu {
     display: none;
   }
-  
+
   /* Adjust product width for mobile */
   .product {
     width: 100%;
     max-width: 400px;
   }
-  
+
   /* Adjust footer for mobile */
   footer div {
     width: 100%;
     text-align: center;
   }
-  
+
   /* Adjust image container height for mobile */
   #image-container {
     height: 250px;
   }
-  
+
   /* Adjust cart indicator position for mobile */
   #cart-indicator {
     top: auto;
@@ -484,41 +484,89 @@ header {
     padding: 10px;
     min-height: 80px;
   }
-  
+
   header img {
     max-width: 100px;
   }
-  
+
   .title {
     font-size: 18px;
     padding: 15px;
   }
-  
+
   #image-container {
     height: 200px;
   }
-  
+
   .product h2 {
     font-size: 16px;
   }
-  
+
   .product ul li {
     font-size: 12px;
   }
-  
+
   .mobile-menu-toggle {
     padding: 10px;
   }
-  
+
   nav ul li {
     padding: 10px 15px;
   }
-  
+
   footer h3 {
     font-size: 18px;
   }
-  
+
   footer .l {
     font-size: 14px;
   }
+}
+/* Replace your existing cart indicator CSS with this */
+
+/* Cart indicator - Base styles */
+#cart-indicator {
+  background: linear-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(241, 241, 241, 1) 60%,
+    rgba(233, 233, 233, 1) 100%
+  );
+  color: black;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  position: fixed;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Desktop positioning */
+@media (min-width: 769px) {
+  #cart-indicator {
+    top: 80px;
+    right: 20px;
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+/* Mobile positioning */
+@media (max-width: 768px) {
+  #cart-indicator {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Active state for cart indicator */
+#cart-indicator.active {
+  display: block;
+  opacity: 1;
 }

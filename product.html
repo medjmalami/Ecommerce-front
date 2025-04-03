@@ -138,7 +138,7 @@
               <li>Processeur : AMD Ryzen™ 5 5500H</li>
               <li>Mémoire RAM : 16Go</li>
               <li>Carte Graphique : NVIDIA GeForce RTX 2050</li>
-              
+
               <li>Garantie 2 an</li>
               <li>Couleur : Noir</li>
           </ul></p>
@@ -157,7 +157,7 @@
               <li>Processeur Intel Core i5-12450H</li>
               <li>Disque SSD 512 Go M.2 2242 PCIe NVMe</li>
               <li>Carte Graphiques NVIDIA GeForce RTX 2050</li>
-              
+
               <li>Garantie 2 an</li>
               <li>Couleur : Noir</li>
           </ul></p>
@@ -292,7 +292,7 @@
           <p class="new">139.00 DT</p><br>
           <button onclick="addToCart('div22')">Add to shopping Cart</button>
         </section>
-        
+
         <section class="product">
           <img
             src="87577458_9761841878.jpeg"
@@ -366,7 +366,7 @@
               <li>Démarrage automatique par pression sur le cône</li>
               <li>Double sens de rotation</li>
               <li>Bol verseur translucide gradué</li>
-              
+
           </ul></p>
           <p class="new">65.00 DT</p>
           <button onclick="addToCart('div27')">Add to shopping Cart</button>
@@ -382,18 +382,18 @@
               <li>Puissance 330 Watts</li>
               <li>Capacité: 180ml</li>
               <li>Filtre permanent</li>
-              
+
           </ul></p>
           <p class="new">59.00 DT</p><br>
           <button onclick="addToCart('div28')">Add to shopping Cart</button>
         </section>
 
   </index>
-    <footer>   
+    <footer>
         <div class="french-line"> <img style="float: left; margin-left: 20px" class="logo" src="logo2.jpg" alt="logo" />
           <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
-        </div> 
-         
+        </div>
+
           <div class="info">
             <h3 class="l">Why buy from us?</h3>
             <ul>
@@ -413,7 +413,7 @@
               <li class="l">Closing Hours: 18:00PM</li>
             </ul>
           </div>
-        
+
       <div>
       <hr style="color: aliceblue;"/>
       <p class="copyright">&copy; 2024 Commercial Electronics Store</p></div>
@@ -425,34 +425,35 @@
           const cartString = sessionStorage.getItem('cartItems');
           return cartString ? JSON.parse(cartString) : {};
         }
-        
+
         function saveCartItems(cartItems) {
           sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
         }
-        
+
         // Shopping cart functionality
         function addToCart(productId) {
           let notif = document.getElementById("notif");
           notif.style.display = 'inline';
-          
+
           // Get current cart items
           const cartItems = getCartItems();
-          
+
           // Increment quantity or add new item
           cartItems[productId] = (cartItems[productId] || 0) + 1;
-          
+
           // Save updated cart
           saveCartItems(cartItems);
-          
+
           // For backward compatibility, also update the old array format
           let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
           if (!myArray.includes(productId)) {
             myArray.push(productId);
             sessionStorage.setItem('myArray', JSON.stringify(myArray));
           }
-          
+
           document.getElementById("cart-indicator").textContent = "Your Product Has Been Added";
           document.getElementById("cart-indicator").classList.add("active");
+          notif.style.display = 'inline';
 
           // Hide the indicator after 3 seconds
           setTimeout(() => {
@@ -464,7 +465,7 @@
         // Mobile menu toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navMenu = document.querySelector('.nav-menu');
-        
+
         mobileMenuToggle.addEventListener('click', function() {
           navMenu.classList.toggle('active');
           this.classList.toggle('active');
@@ -472,7 +473,7 @@
 
         // Submenu toggle for mobile
         const submenuToggles = document.querySelectorAll('.submenu-toggle');
-        
+
         submenuToggles.forEach(toggle => {
           toggle.addEventListener('click', function(e) {
             e.preventDefault();
@@ -481,15 +482,7 @@
             parentLi.classList.toggle('submenu-active');
           });
         });
-        
-        // Check if cart has items to show notification on page load
-        window.onload = function() {
-          const cartItems = getCartItems();
-          if (Object.keys(cartItems).length > 0) {
-            let notif = document.getElementById("notif");
-            notif.style.display = 'inline';
-          }
-        };
+
       </script>
   </body>
 </html>

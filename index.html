@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
+    <div id="cart-indicator"></div>
     <header>
       <a href="index.html">
         <img  style="float: left; margin-left: 20px; border-radius: 50px 20px;" src="logo2.jpg" alt="logo">
       </a>
     </header>
-    
+
     <nav>
       <div class="mobile-menu-toggle">
         <i class="fa-solid fa-bars"></i>
@@ -49,9 +50,8 @@
         </li>
       </ul>
     </nav>
-    
-    <div id="cart-indicator"></div>
-    
+
+
     <div id="image-container">
       <img src="img1.jpg" alt="Image 1">
       <img src="img3.jpg!w700wp" alt="Image 2">
@@ -60,7 +60,7 @@
     </div>
 
     <div class="title"><span class="blue">Mega</span> Promo</div>
-    
+
     <index>
       <section class="product">
         <img src="chaise noire 3fc66dab.jpg_640x640Q90.jpg_.webp" alt="Product 1" />
@@ -76,7 +76,7 @@
         <p class="new">599.000 DT</p>
         <button onclick="addToCart('div1')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Mixeur-Plongeant-3en1-Tristar-MX-4154-Blanc-bestbuytunisie.prixtunisie.best_-168x168.jpg" alt="Product 2" />
         <h2>Mixeur Plongeant 3en1 Tristar MX-4154 Blanc</h2>
@@ -94,7 +94,7 @@
         <p class="new">105.000 DT</p>
         <button onclick="addToCart('div2')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Montre-Connecte-Colmi-C61-Noir-3.webp" alt="Product 3" />
         <h2>Montre Connecté Colmi C61 – Noir</h2>
@@ -116,7 +116,7 @@
         <p class="new">195.000 DT</p>
         <button onclick="addToCart('div3')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Machine-A-Cafe-Espresso-Caffitaly-System-Luna-S32-R-Noir-bestbuytunisie.prixtunisie.best_-168x168.jpg" alt="Product 4" />
         <h2>Machine À Café Espresso Caffitaly System Luna S32-R Noir</h2>
@@ -131,7 +131,7 @@
         <p class="new">199.000 DT</p>
         <button onclick="addToCart('div4')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Smartphone-VIVO-Y21-4Go-64Go-Bleu-ciel-bestbuytunisie-168x168.webp.jpg" alt="Product 5" />
         <h2>Smartphone VIVO Y21 – 4Go – 64Go – Bleu ciel</h2>
@@ -150,7 +150,7 @@
         <p class="new">579.000 DT</p>
         <button onclick="addToCart('div5')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Ecran-moniteur-Gaming-Coolermaster-GA241-100HZ-DALL-VA-1MS.jpg" alt="Product 6" />
         <h2>Ecran Cooler Master GA241 23.8″ Full HD 1ms 100Hz – GA241</h2>
@@ -169,7 +169,7 @@
         <p class="new">305.000 DT</p>
         <button onclick="addToCart('div6')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="Copie-de-PROMO-AID-.jpg" alt="Product 7" />
         <h2>Pc Portable Gamer Lenovo Loq 15ARH8 8Go 512 Go RTX 2050 -Noir-82XV00UGFG</h2>
@@ -186,7 +186,7 @@
         <p class="new">2,149.000 DT</p>
         <button onclick="addToCart('div7')">Add to Shopping Cart</button>
       </section>
-      
+
       <section class="product">
         <img src="IMG-7827-scaled-168x168.jpg" alt="Product 8" />
         <h2>Chaise Gaming Vert / Noire</h2>
@@ -203,12 +203,12 @@
       </section>
     </index>
 
-    <footer>   
+    <footer>
       <div class="french-line">
         <img class="logo" src="logo2.jpg" alt="logo" />
         <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
-      </div> 
-       
+      </div>
+
       <div class="info">
         <h3>Why buy from us?</h3>
         <ul>
@@ -218,7 +218,7 @@
           <li class="l">Excellent customer service</li>
         </ul>
       </div>
-      
+
       <div class="contact">
         <h3>Contact us</h3>
         <ul>
@@ -229,7 +229,7 @@
           <li class="l">Closing Hours: 18:00PM</li>
         </ul>
       </div>
-      
+
       <div>
         <hr style="color: aliceblue;"/>
         <p class="copyright">&copy; 2024 Commercial Electronics Store</p>
@@ -251,73 +251,94 @@
         currentImageIndex = (currentImageIndex + 1) % images.length;
         images[currentImageIndex].style.display = "block";
       }
-      
+
       window.onload = function(){
         rotateImages();
         rotateImages();
         rotateImages();
         setImagesWidth();
-        
+
         // Check if cart has items to show notification
-        const cartItems = getCartItems();
-        if (Object.keys(cartItems).length > 0) {
-          let notif = document.getElementById("notif");
-          notif.style.display = 'inline';
-        }
+
       }
-      
+
       // Set image width on initial load and window resize
       setImagesWidth();
       window.addEventListener("resize", setImagesWidth);
 
-      setInterval(rotateImages, 2000); 
+      setInterval(rotateImages, 2000);
 
       // Get cart items with quantities
       function getCartItems() {
         const cartString = sessionStorage.getItem('cartItems');
         return cartString ? JSON.parse(cartString) : {};
       }
-      
+
       function saveCartItems(cartItems) {
         sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
       }
-      
-      // Shopping cart functionality
-      function addToCart(productId) {
-        let notif = document.getElementById("notif");
-        notif.style.display = 'inline';
-        
-        // Get current cart items
-        const cartItems = getCartItems();
-        
-        // Increment quantity or add new item
-        cartItems[productId] = (cartItems[productId] || 0) + 1;
-        
-        // Save updated cart
-        saveCartItems(cartItems);
-        
-        // For backward compatibility, also update the old array format
-        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
-        if (!myArray.includes(productId)) {
-          myArray.push(productId);
-          sessionStorage.setItem('myArray', JSON.stringify(myArray));
-        }
-        
-        // Show notification
-        document.getElementById("cart-indicator").textContent = "Your Product Has Been Added";
-        document.getElementById("cart-indicator").classList.add("active");
 
-        // Hide the indicator after 3 seconds
-        setTimeout(() => {
-          document.getElementById("cart-indicator").textContent = "";
-          document.getElementById("cart-indicator").classList.remove("active");
-        }, 3000);
-      }
+      // Shopping cart functionality
+      // Replace your existing addToCart function with this
+function addToCart(productId) {
+  // Update notification marker
+  let notif = document.getElementById("notif");
+  notif.style.display = 'inline';
+
+  // Get current cart items
+  const cartItems = getCartItems();
+
+  // Increment quantity or add new item
+  cartItems[productId] = (cartItems[productId] || 0) + 1;
+
+  // Save updated cart
+  saveCartItems(cartItems);
+
+  // For backward compatibility, also update the old array format
+  let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
+  if (!myArray.includes(productId)) {
+    myArray.push(productId);
+    sessionStorage.setItem('myArray', JSON.stringify(myArray));
+  }
+
+  // Show notification
+  const cartIndicator = document.getElementById("cart-indicator");
+  
+  // Make sure cart indicator exists
+  if (!cartIndicator) {
+    console.log("Cart indicator not found, creating one");
+    const newCartIndicator = document.createElement('div');
+    newCartIndicator.id = "cart-indicator";
+    document.body.appendChild(newCartIndicator);
+    cartIndicator = newCartIndicator;
+  }
+  
+  cartIndicator.textContent = "Your Product Has Been Added";
+  cartIndicator.classList.add("active");
+  
+  // Hide the indicator after 3 seconds
+  setTimeout(function() {
+    cartIndicator.classList.remove("active");
+  }, 3000);
+}
+
+// Add this to ensure the cart indicator is always available
+document.addEventListener('DOMContentLoaded', function() {
+  // Make sure the cart indicator element exists
+  if (!document.getElementById("cart-indicator")) {
+    console.log("Cart indicator not found, creating one");
+    const cartIndicator = document.createElement('div');
+    cartIndicator.id = "cart-indicator";
+    document.body.appendChild(cartIndicator);
+  }
+});
+
+
 
       // Mobile menu toggle
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      
+
       mobileMenuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
         this.classList.toggle('active');
@@ -325,13 +346,15 @@
 
       // Submenu toggle for mobile
       const submenuToggles = document.querySelectorAll('.submenu-toggle');
-      
+
       submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          const parentLi = this.parentElement;
-          parentLi.classList.toggle('submenu-active');
+          if (window.innerWidth > 768) {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle('submenu-active');
+          }
         });
       });
     </script>

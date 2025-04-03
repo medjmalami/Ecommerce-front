@@ -362,16 +362,16 @@ footer .copyright {
   
   /* Show submenu toggle on mobile */
   .submenu-toggle {
-    display: inline-block;
+    display: none !important;
     position: absolute;
     right: 20px;
   }
-  
+
   /* Adjust submenu for mobile */
   nav ul li ul.submenu {
     position: static;
     width: 100%;
-    display: none;
+    display: none !important;
     margin-top: 10px;
     box-shadow: none;
     border-radius: 0;
