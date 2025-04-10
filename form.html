@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - Commercial Electronics</title>
-    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="styles/form.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <header>
       <div class="header-content">
         <a href="index.html">
-          <img class="header-logo" src="logo2.jpg" alt="logo">
+          <img class="header-logo" src="public/logo2.jpg" alt="logo">
         </a>
       </div>
     </header>
@@ -103,77 +103,11 @@
     <div><h2 id="thankyou"></h2></div>
     <div id="error-message"></div>
     
-    <script>
-      window.onload = function(){
-        var prix = sessionStorage.getItem('prix') || '0';
-        var element = document.getElementById('sum');
-        var elem = element.querySelector("span");
-        elem.textContent = prix;
-        
-        // Initialize shipping cost based on default selection
-        const shippingCost = document.getElementById("standard").checked ? 10 : 20;
-        var basePrice = parseInt(prix) || 0;
-        var totalPrice = basePrice + shippingCost;
-        elem.textContent = totalPrice.toFixed(2);
-      }
-      
-      const form = document.getElementById("orderForm");
-      const thankyou = document.getElementById("thankyou");
-      const standardRadio = document.getElementById("standard");
-      const expressRadio = document.getElementById("express");
 
-      standardRadio.addEventListener("change", handleShippingChange);
-      expressRadio.addEventListener("change", handleShippingChange);
-      
-      function handleShippingChange(event) {
-        const shippingCost = event.target.value === "standard" ? 10 : 20;
-        var element = document.getElementById('sum');
-        var elem = element.querySelector("span");
-        var basePrice = parseInt(sessionStorage.getItem('prix')) || 0;
-        var totalPrice = basePrice + shippingCost;
-        elem.textContent = totalPrice.toFixed(2);
-      }
-
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const name = document.getElementById("name").value;
-        thankyou.textContent = `Thank you, ${name}, for your order!`;
-        var element = document.getElementById('sum');
-        element.style.display = 'none';
-
-        // Add class to trigger animation/transition
-        thankyou.classList.add("shown");
-        form.reset();
-        let myArray = JSON.parse(sessionStorage.getItem('myArray')) || [];
-        myArray = [];
-        sessionStorage.setItem('myArray', JSON.stringify(myArray));
-      });
-      
-      // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      mobileMenuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        this.classList.toggle('active');
-      });
-
-      // Submenu toggle for mobile
-      const submenuToggles = document.querySelectorAll('.submenu-toggle');
-      
-      submenuToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          const parentLi = this.parentElement;
-          parentLi.classList.toggle('submenu-active');
-        });
-      });
-    </script>
     
     <footer>
       <div class="french-line">
-        <img class="logo" src="logo2.jpg" alt="logo" />
+        <img class="logo" src="public/logo2.jpg" alt="logo" />
         <p class="slogan">La première préférence pour les dernières nouveautés en électronique.</p>
       </div> 
        
@@ -203,5 +137,6 @@
         <p class="copyright">&copy; 2024 Commercial Electronics Store</p>
       </div>
     </footer>
+    <script src="js/form.js"></script>
   </body>
 </html>

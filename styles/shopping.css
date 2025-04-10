@@ -476,3 +476,49 @@ footer .copyright {
   /* Other styles */
   display: block; /* Show by default */
 }
+.product{
+  display: none;
+}
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.quantity-controls button {
+  width: 32px;
+  height: 32px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.quantity-controls button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+.quantity-controls button:active {
+  transform: scale(0.95);
+}
+.quantity-controls span {
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 16px;
+  min-width: 30px;
+  text-align: center;
+}
+.product-total {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+.item-total {
+  color: #e74c3c;
+}

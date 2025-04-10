@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Commercial Electronics</title>
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="styles/about.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -17,7 +17,7 @@
     <header>
       <div class="header-content">
         <a href="index.html">
-          <img src="logo2.jpg" alt="logo" class="header-logo">
+          <img src="public/logo2.jpg" alt="logo" class="header-logo">
         </a>
       </div>
     </header>
@@ -130,7 +130,7 @@
     <br />
     <footer>
       <div class="french-line">
-        <img class="logo" src="logo2.jpg" alt="logo" />
+        <img class="logo" src="public/logo2.jpg" alt="logo" />
         <p class="slogan">
           La première préférence pour les dernières nouveautés en électronique.
         </p>
@@ -171,27 +171,6 @@
       </div>
     </footer>
 
-    <script>
-      // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      
-      mobileMenuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        this.classList.toggle('active');
-      });
-
-      // Submenu toggle for mobile
-      const submenuToggles = document.querySelectorAll('.submenu-toggle');
-      
-      submenuToggles.forEach(toggle => {
-        toggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          const parentLi = this.parentElement;
-          parentLi.classList.toggle('submenu-active');
-        });
-      });
-    </script>
+    <script src="js/mobileMenu.js"></script>
   </body>
 </html>
